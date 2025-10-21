@@ -67,6 +67,9 @@
 .py-4 { padding-block: $spacing-lg; }
 .py-lg2 { margin: $spacing-lg2; }
 .py-5 { padding-block: $spacing-xl; }
+.py-6 { padding-block: 3.5rem; }
+.py-7 { padding-block: 4rem; }
+.py-8 { padding-block: 5rem; }
 
 // =================================
 //   TEXT
@@ -92,6 +95,17 @@
 .fw-bolder { font-weight: 700; }
 .fw-bold { font-weight: 600; }
 .fw-normal { font-weight: 400; }
+
+// Text transforms
+.text-uppercase { text-transform: uppercase; }
+.text-capitalize { text-transform: capitalize; }
+
+// =================================
+//   COLORS
+// =================================
+
+.bg-accent { background-color: $background-accent; }
+.bg-accent-light { background-color: $background-accent-light; }
 
 .text-white { color: $text-light; }
 .text-primary { color: $text-accent; }
