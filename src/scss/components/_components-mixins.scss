@@ -1,0 +1,111 @@
+// =================================
+//   COMPONENTS MIXINS
+// =================================
+
+// Imports
+@use 'sass:color';
+@use '../base/variables' as *;
+
+// =================================
+//   BUTTONS
+// =================================
+
+@mixin button-base(
+  $bg: $background-primary,
+  $color: $text-main,
+  $hover-bg: color.scale($bg, $lightness: -5%),
+  $hover-color: $text-main
+) {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background-color: $bg;
+  color: $color;
+  font-size: $fs-base;
+  font-family: $font-title;
+  font-weight: 500;
+  border: none;
+  border-radius: $rounded-md;
+  transition-property: background-color, color, box-shadow;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+
+  &:hover,
+  &:focus {
+    background-color: $hover-bg;
+    color: $hover-color;
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $disabled-bg;
+    color: $disabled-text;
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+}
+
+@mixin button-size(
+  $padding-y: 0.75rem,
+  $padding-x: 1.5rem,
+  $font-size: $fs-lg,
+  $border-radius: $rounded-lg
+) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  border-radius: $border-radius;
+}
+
+// =================================
+//   CARDS
+// =================================
+
+@mixin card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: $background-primary;
+  background-clip: border-box;
+  border: 1px solid $disabled-border;
+  border-radius: $rounded-md;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+@mixin card-img {
+  width: 100%;
+  border-radius: $rounded-md $rounded-md 0 0;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@mixin card-header {
+  padding: $spacing-sm $spacing-md;
+  background-color: $background-secondary;
+  border-bottom: 1px solid $disabled-border;
+  font-weight: 600;
+  font-family: $font-title;
+}
+
+@mixin card-body {
+  flex: 1 1 auto;
+  padding: $spacing-md;
+  font-family: $font-text;
+  color: $text-main;
+  font-size: $fs-base;
+}
+
+@mixin card-footer {
+  padding: $spacing-sm $spacing-md;
+  background-color: $background-secondary;
+  border-top: 1px solid $disabled-border;
+  font-size: $fs-sm;
+  color: $text-muted;
+}

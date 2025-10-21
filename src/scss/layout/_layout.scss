@@ -1,0 +1,93 @@
+// =================================
+//   LAYOUT
+// =================================
+
+// Imports
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+@use 'layout-mixins' as layout;
+
+// =================================
+//  CONTAINERS
+// =================================
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding-inline: $spacing-md;
+
+  @include media-breakpoint-up($bp-sm) {
+    max-width: 540px;
+    padding-inline: 0;
+  }
+
+  @include media-breakpoint-up($bp-md) {
+    max-width: 720px;
+  }
+
+  @include media-breakpoint-up($bp-lg) {
+    max-width: 960px;
+  }
+
+  @include media-breakpoint-up($bp-xl) {
+    max-width: 1140px;
+  }
+
+  @include media-breakpoint-up($bp-xxl) {
+    max-width: 1320px;
+  }
+}
+
+.container-fluid {
+  max-width: 100%;
+}
+
+// =================================
+//   LAYOUT HELPERS
+// =================================
+
+// Flex
+.d-flex { display: flex; }
+.flex-column { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.flex-wrap { flex-wrap: wrap; }
+
+.justify-start { justify-content: flex-start; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-end { justify-content: flex-end; }
+
+.align-start { align-items: flex-start; }
+.align-center { align-items: center; }
+.align-end { align-items: flex-end; }
+
+// Grid
+.d-grid { display: grid; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+// Gaps (flex & grid)
+.gap-0 { gap: 0; }
+.gap-xs { gap: $spacing-xs; }
+.gap-sm { gap: $spacing-sm; }
+.gap-md { gap: $spacing-md; }
+.gap-lg { gap: $spacing-lg; }
+.gap-lg2 { gap: $spacing-lg2; }
+.gap-xl { gap: $spacing-xl; }
+
+.gap-y-0 { column-gap: 0; }
+.gap-y-xs { column-gap: $spacing-xs; }
+.gap-y-sm { column-gap: $spacing-sm; }
+.gap-y-md { column-gap: $spacing-md; }
+.gap-y-lg { column-gap: $spacing-lg; }
+.gap-y-lg2 { column-gap: $spacing-lg2; }
+.gap-y-xl { column-gap: $spacing-xl; }
+
+.gap-x-0 { row-gap: 0; }
+.gap-x-xs { row-gap: $spacing-xs; }
+.gap-x-sm { row-gap: $spacing-sm; }
+.gap-x-md { row-gap: $spacing-md; }
+.gap-x-lg { row-gap: $spacing-lg; }
+.gap-x-lg2 { row-gap: $spacing-lg2; }
+.gap-x-xl { row-gap: $spacing-xl; }

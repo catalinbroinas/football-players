@@ -1,0 +1,74 @@
+// =================================
+//   FORMS
+// =================================
+
+// Imports
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+@use 'forms-mixins' as forms;
+
+// =================================
+//   LAYOUT
+// =================================
+
+.form-container {
+  display: flex;
+  flex-flow: column wrap;
+  gap: $spacing-lg;
+}
+
+.form-row {
+  display: flex;
+  flex-flow: row wrap;
+  gap: $spacing-md;
+
+  @include media-breakpoint-down(sn) {
+    flex-direction: column;
+  }
+}
+
+.form-outline {
+  flex-grow: 1;
+  position: relative;
+}
+
+// =================================
+//   INPUT FIELDS
+// =================================
+
+.form-control {
+  @include forms.form-control();
+}
+
+.form-control:placeholder-shown ~ .form-label {
+  @include forms.form-label(true);
+}
+
+.form-label {
+  @include forms.form-label();
+}
+
+.form-control.form-disabled {
+  @include forms.form-disabled;
+}
+
+// =================================
+//   CHECKBOX
+// =================================
+
+.form-outline.checkbox-wrapper {
+  @include forms.checkbox-wrapper;
+}
+
+.checkbox-input,
+.checkbox-label {
+  cursor: pointer;
+}
+
+.checkbox-input {
+  @include forms.checkbox-input();
+}
+
+.checkbox-label {
+  @include forms.checkbox-label();
+}

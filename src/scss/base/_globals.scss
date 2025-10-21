@@ -1,0 +1,95 @@
+// =================================
+//   GLOBAL STYLE
+// =================================
+
+// Imports
+@use 'variables' as *;
+
+// CSS Reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 2px solid $background-accent;
+  outline-offset: 2px;
+}
+
+// HTML & Body
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: $font-text, sans-serif;
+  font-size: 16px;
+  background-color: $background-main;
+  color: $text-main;
+  line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-title, sans-serif;
+  color: $text-main;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; font-weight: 700; }
+h2 { font-size: 2rem; font-weight: 600; }
+h3 { font-size: 1.75rem; font-weight: 500; }
+h4 { font-size: 1.5rem; font-weight: 500; }
+h5 { font-size: 1.25rem; font-weight: 500; }
+h6 { font-size: 1rem; font-weight: 500; }
+
+p {
+  margin-bottom: 1rem;
+  color: $text-dark;
+  font-family: $font-text, sans-serif;
+  font-size: 1rem;
+}
+
+// List group
+ul, ol {
+  list-style-type: none;
+  padding: 0;
+}
+
+// Links
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  color: $text-accent;
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Buttons
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  color: inherit;
+  background: none;
+  line-height: 1;
+}

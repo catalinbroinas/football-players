@@ -1,0 +1,88 @@
+// =================================
+//   MIXINS
+// =================================
+
+// =================================
+//   TYPOGRAPHY
+// =================================
+
+@mixin custom-text(
+  $font-family: $font-text, 
+  $font-weight: 400, 
+  $font-size: 1rem, 
+  $color: $text-main
+) {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  color: $color;
+}
+
+@mixin page-title($size: $fs-xxxl, $color: $text-main) {
+  @include custom-text($font-title, 700, $size, $color);
+}
+
+@mixin title($size: $fs-xxl) {
+  @include custom-text($font-title, 700, $size, $text-main);
+}
+
+@mixin subtitle($size: $fs-xl) {
+  @include custom-text($font-title, 600, $size, $text-dark);
+}
+
+@mixin text {
+  @include custom-text($font-text, 400, $fs-base, $text-dark);
+}
+
+@mixin footer-text {
+  @include custom-text($font-title, 500, $fs-base, $text-main);
+}
+
+@mixin subtitle-muted($size: $fs-lg) {
+  @include custom-text($font-title, 500, $size, $text-muted);
+}
+
+@mixin text-muted {
+   @include custom-text($font-text, 400, $fs-base, $text-muted);
+}
+
+// =================================
+//   STYLES
+// =================================
+
+// Masks
+@mixin mask-dark($opacity: 0.15) {
+  background-color: rgba(0, 0, 0, $opacity);
+}
+
+@mixin mask-light($opacity: 0.15) {
+  background-color: rgba(251, 251, 251, $opacity);
+}
+
+// Effects
+@mixin glass-effect {
+  background: hsla(0, 0%, 100%, 0.55);
+  backdrop-filter: blur(30px);
+}
+
+// =================================
+//   MEDIA QUERIES
+// =================================
+
+@mixin media-breakpoint-up($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($breakpoint) {
+  @media (max-width: ($breakpoint - 0.02px)) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-between($lower, $upper) {
+  @media (min-width: $lower) and (max-width: ($upper - 0.02px)) {
+    @content;
+  }
+}

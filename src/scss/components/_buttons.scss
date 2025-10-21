@@ -1,0 +1,54 @@
+// =================================
+//   BUTTONS
+// =================================
+
+// Imports
+@use 'sass:color';
+@use '../base/variables' as *;
+@use 'components-mixins' as components;
+
+// Primary button
+.btn-primary {
+  @include components.button-base($background-accent, $text-light);
+  box-shadow: 0 2px 6px rgba($color: $background-accent, $alpha: 0.2);
+
+  &:hover,
+  &:active {
+    box-shadow: 0 4px 12px rgba($color: $background-accent, $alpha: 0.25);
+  }
+}
+
+// Secondary button
+.btn-secondary {
+  @include components.button-base(
+    $background-accent-light,
+    $text-accent,
+    color.scale($background-accent-light, $lightness: -10%),
+    $text-main
+  );
+}
+
+// Default button
+.btn-tertiary {
+  @include components.button-base();
+}
+
+// Outline primary button
+.btn-primary-outline {
+  @include components.button-base(
+    transparent,
+    $background-accent,
+    color.scale($background-accent, $lightness: 90%)
+  );
+  border: 2px solid $background-accent;
+}
+
+// Large button
+.btn-lg {
+  @include components.button-size(0.75rem, 1.5rem, $fs-lg, $rounded-lg);
+}
+
+// Rounded button
+.btn-rounded {
+  border-radius: 2rem;
+}

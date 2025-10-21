@@ -1,0 +1,170 @@
+// =================================
+//   FORMS
+// =================================
+
+// Imports
+@use 'sass:color';
+@use '../base/variables' as *;
+
+// =================================
+//   INPUT FIELDS
+// =================================
+
+@mixin form-control(
+  $bg: $background-main,
+  $color: $text-main,
+  $font-size: $fs-base,
+  $padding: 0.5rem,
+  $font-family: $font-form
+) {
+  font-family: $font-family;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $form-border;
+  outline: 0;
+  font-size: $font-size;
+  color: $color;
+  padding: $padding;
+  background: $bg;
+  transition-property: border-color, border-width, box-shadow;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:not(textarea):placeholder-shown {
+    border: none;
+    border-bottom: 2px solid $form-border;
+  }
+
+  &:hover:not(:focus):not(:disabled) {
+    border-color: color.scale($form-border, $lightness: -10%);
+  }
+
+  &:focus,
+  &:focus:placeholder-shown {
+    border-width: 3px;
+    border-color: $form-border-focus;
+    box-shadow: 0 1px 0 0 $form-border-focus;
+  }
+
+  &:disabled {
+    @include form-disabled;
+  }
+}
+
+@mixin form-label(
+  $inside: false,
+  $font-size: $fs-sm,
+  $color: $text-dark,
+  $top: 1.5rem,
+  $left: 0.5rem,
+  $font-size-inside: $fs-md,
+  $color-inside: $text-dark
+) {
+  position: absolute;
+  display: block;
+  transition-property: top, left, font-size, color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+
+  @if $inside {
+    cursor: text;
+    top: $top;
+    left: $left;
+    font-size: $font-size-inside;
+    color: $color-inside;
+  } @else {
+    top: 0;
+    left: 0;
+    font-size: $font-size;
+    color: $color;
+  }
+}
+
+@mixin form-disabled {
+  background-color: $disabled-bg;
+  color: $disabled-text;
+  border-color: $disabled-border;
+  cursor: not-allowed;
+}
+
+// =================================
+//   CHECKBOX
+// =================================
+
+@mixin checkbox-wrapper {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  gap: 0.5rem;
+}
+
+@mixin checkbox-input(
+  $size: 1.5rem,
+  $bg: $background-secondary,
+  $bg-checked: $checkbox-checked,
+  $border-color: $checkbox-border-color,
+  $border-radius: $rounded-sm
+) {
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  width: $size;
+  height: $size;
+  background-color: $bg;
+  border: 2px solid $border-color;
+  border-radius: $border-radius;
+  transition-property: background-color, border-color, transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+
+  &:focus,
+  &:hover:not(:focus):not(:disabled) {
+    border-color: color.scale($border-color, $lightness: -10%);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($bg-checked, 0.25);
+  }
+
+  &:checked {
+    background-color: $bg-checked;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 4px;
+    height: 8px;
+    border: solid $bg;
+    border-width: 0 2px 2px 0;
+    transform: scale(0) rotate(45deg);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:checked::after {
+    transform: scale(1) rotate(45deg);
+  }
+
+  &:disabled {
+    @include form-disabled;
+  }
+}
+
+@mixin checkbox-label(
+  $font-size: $fs-base,
+  $color: $checkbox-label,
+  $font-family: $font-form
+) {
+  font-size: $font-size;
+  color: $color;
+  font-weight: 500;
+  font-family: $font-family;
+}

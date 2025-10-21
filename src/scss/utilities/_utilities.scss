@@ -1,0 +1,137 @@
+// =================================
+//   UTILITIES
+// =================================
+
+// Imports
+@use '../base/variables' as *;
+
+// =================================
+//   SPACING
+// =================================
+
+// Margins
+.m-0 { margin: 0; }
+.m-1 { margin: $spacing-xs; }
+.m-2 { margin: $spacing-sm; }
+.m-3 { margin: $spacing-md; }
+.m-4 { margin: $spacing-lg; }
+.m-lg2 { margin: $spacing-lg2; }
+.m-5 { margin: $spacing-xl; }
+
+.m-auto { margin: auto; }
+.mx-auto { margin: 0 auto; }
+.my-auto { margin: auto 0; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: $spacing-xs; }
+.mb-2 { margin-bottom: $spacing-sm; }
+.mb-3 { margin-bottom: $spacing-md; }
+.mb-4 { margin-bottom: $spacing-lg; }
+.mb-lg2 { margin: $spacing-lg2; }
+.mb-5 { margin-bottom: $spacing-xl; }
+.mb-6 { margin-bottom: 3.5rem; }
+.mb-7 { margin-bottom: 4rem; }
+.mb-8 { margin-bottom: 5rem; }
+.mb-9 { margin-bottom: 6rem; }
+.mb-10 { margin-bottom: 8rem; }
+
+.me-0 { margin-right: 0; }
+.me-1 { margin-right: $spacing-xs; }
+.me-2 { margin-right: $spacing-sm; }
+.me-3 { margin-right: $spacing-md; }
+.me-4 { margin-right: $spacing-lg; }
+.me-lg2 { margin: $spacing-lg2; }
+.me-5 { margin-right: $spacing-xl; }
+
+// Paddings
+.p-0 { padding: 0; }
+.p-1 { padding: $spacing-xs; }
+.p-2 { padding: $spacing-sm; }
+.p-3 { padding: $spacing-md; }
+.p-4 { padding: $spacing-lg; }
+.p-lg2 { margin: $spacing-lg2; }
+.p-5 { padding: $spacing-xl; }
+
+.px-0 { padding-inline: 0; }
+.px-1 { padding-inline: $spacing-xs; }
+.px-2 { padding-inline: $spacing-sm; }
+.px-3 { padding-inline: $spacing-md; }
+.px-4 { padding-inline: $spacing-lg; }
+.px-lg2 { margin: $spacing-lg2; }
+.px-5 { padding-inline: $spacing-xl; }
+
+.py-0 { padding-block: 0; }
+.py-1 { padding-block: $spacing-xs; }
+.py-2 { padding-block: $spacing-sm; }
+.py-3 { padding-block: $spacing-md; }
+.py-4 { padding-block: $spacing-lg; }
+.py-lg2 { margin: $spacing-lg2; }
+.py-5 { padding-block: $spacing-xl; }
+
+// =================================
+//   TEXT
+// =================================
+
+// Text alignments
+.text-start {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: right;
+}
+
+// Fonts
+.font-title { font-family: $font-title; }
+.font-text { font-family: $font-text; }
+
+.fw-bolder { font-weight: 700; }
+.fw-bold { font-weight: 600; }
+.fw-normal { font-weight: 400; }
+
+.text-white { color: $text-light; }
+.text-primary { color: $text-accent; }
+
+// =================================
+//   VISIBILITY
+// =================================
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+// =================================
+//   SIZING
+// =================================
+
+.w-50 { width: 50%; }
+.w-100 { width: 100%; }
+
+.h-100 { height: 100%; }
+
+// =================================
+//   BORDERS
+// =================================
+
+// Border
+.border-0 { border: none; }
+
+// Border radius
+.rounded-0 { border-radius: 0; }
+.rounded-xs { border-radius: $rounded-xs; }
+.rounded-sm { border-radius: $rounded-sm; }
+.rounded-md { border-radius: $rounded-md; }
+.rounded-lg { border-radius: $rounded-lg; }
+.rounded-xl { border-radius: $rounded-xl; }
+.rounded-xxl { border-radius: $rounded-xxl; }
