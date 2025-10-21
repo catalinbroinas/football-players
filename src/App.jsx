@@ -1,8 +1,9 @@
+import Intro from './sections/Intro.jsx';
 
 function App() {
   return (
-    <h1>React Work</h1>
-  )
+    <header><Intro /></header>
+  );
 }
 
 export default App

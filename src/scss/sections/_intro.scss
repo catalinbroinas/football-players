@@ -1,0 +1,33 @@
+// =================================
+//   INTRO
+// =================================
+
+// Imports
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.intro {
+  background-color: $background-accent;
+
+  &__title {
+    @include page-title($fs-xxxl, $text-light);
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    @include title();
+    color: $text-light;
+  }
+
+  &__text {
+    @include text();
+    color: $text-light;
+    font-size: $fs-xl;
+  }
+
+  &__hr {
+    height: 8px;
+    width: 5rem;
+    background-color: $text-light;
+  }
+}
