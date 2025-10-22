@@ -104,11 +104,11 @@
 //   COLORS
 // =================================
 
-.bg-accent { background-color: $background-accent; }
-.bg-accent-light { background-color: $background-accent-light; }
+.bg-brand { background-color: $bg-brand; }
+.bg-accent { background-color: $bg-accent; }
 
-.text-white { color: $text-light; }
-.text-primary { color: $text-accent; }
+.text-light { color: $text-inverse; }
+.text-accent { color: $text-accent; }
 
 // =================================
 //   VISIBILITY

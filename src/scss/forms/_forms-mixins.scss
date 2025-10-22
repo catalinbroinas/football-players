@@ -11,8 +11,8 @@
 // =================================
 
 @mixin form-control(
-  $bg: $background-main,
-  $color: $text-main,
+  $bg: $bg-page,
+  $color: $text-primary,
   $font-size: $fs-base,
   $padding: 0.5rem,
   $font-family: $font-form
@@ -58,11 +58,11 @@
 @mixin form-label(
   $inside: false,
   $font-size: $fs-sm,
-  $color: $text-dark,
+  $color: $text-secondary,
   $top: 1.5rem,
   $left: 0.5rem,
   $font-size-inside: $fs-md,
-  $color-inside: $text-dark
+  $color-inside: $text-secondary
 ) {
   position: absolute;
   display: block;
@@ -105,9 +105,9 @@
 
 @mixin checkbox-input(
   $size: 1.5rem,
-  $bg: $background-secondary,
+  $bg: $bg-section,
   $bg-checked: $checkbox-checked,
-  $border-color: $checkbox-border-color,
+  $border-color: $checkbox-border,
   $border-radius: $rounded-sm
 ) {
   appearance: none;

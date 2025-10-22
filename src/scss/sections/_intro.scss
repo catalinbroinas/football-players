@@ -7,27 +7,27 @@
 @use '../base/mixins' as *;
 
 .intro {
-  background-color: $background-accent;
+  background-color: $bg-brand;
 
   &__title {
-    @include page-title($fs-xxxl, $text-light);
+    @include page-title($fs-xxxl, $text-inverse);
     text-transform: uppercase;
   }
 
   &__subtitle {
     @include title();
-    color: $text-light;
+    color: $text-inverse;
   }
 
   &__text {
     @include text();
-    color: $text-light;
+    color: $text-inverse;
     font-size: $fs-xl;
   }
 
   &__hr {
     height: 8px;
     width: 5rem;
-    background-color: $text-light;
+    background-color: $text-inverse;
   }
 }

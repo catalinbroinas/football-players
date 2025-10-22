@@ -15,7 +15,7 @@
 }
 
 :focus-visible {
-  outline: 2px solid $background-accent;
+  outline: 2px solid $bg-brand;
   outline-offset: 2px;
 }
 
@@ -28,8 +28,8 @@ body {
   min-height: 100vh;
   font-family: $font-text, sans-serif;
   font-size: 16px;
-  background-color: $background-main;
-  color: $text-main;
+  background-color: $bg-page;
+  color: $text-primary;
   line-height: 1.6;
 
   -webkit-font-smoothing: antialiased;
@@ -39,7 +39,7 @@ body {
 // Typography
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-title, sans-serif;
-  color: $text-main;
+  color: $text-primary;
   margin: 0 0 0.5rem 0;
   line-height: 1.2;
 }
@@ -53,7 +53,7 @@ h6 { font-size: 1rem; font-weight: 500; }
 
 p {
   margin-bottom: 1rem;
-  color: $text-dark;
+  color: $text-secondary;
   font-family: $font-text, sans-serif;
   font-size: 1rem;
 }

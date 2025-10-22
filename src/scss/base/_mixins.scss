@@ -13,7 +13,7 @@
   $font-family: $font-text, 
   $font-weight: 400, 
   $font-size: 1rem, 
-  $color: $text-main
+  $color: $text-primary
 ) {
   font-family: $font-family;
   font-weight: $font-weight;
@@ -21,24 +21,24 @@
   color: $color;
 }
 
-@mixin page-title($size: $fs-xxxl, $color: $text-main) {
+@mixin page-title($size: $fs-xxxl, $color: $text-primary) {
   @include custom-text($font-title, 700, $size, $color);
 }
 
 @mixin title($size: $fs-xxl) {
-  @include custom-text($font-title, 700, $size, $text-main);
+  @include custom-text($font-title, 700, $size, $text-primary);
 }
 
 @mixin subtitle($size: $fs-xl) {
-  @include custom-text($font-title, 600, $size, $text-dark);
+  @include custom-text($font-title, 600, $size, $text-secondary);
 }
 
 @mixin text {
-  @include custom-text($font-text, 400, $fs-base, $text-dark);
+  @include custom-text($font-text, 400, $fs-base, $text-secondary);
 }
 
 @mixin footer-text {
-  @include custom-text($font-title, 500, $fs-base, $text-main);
+  @include custom-text($font-title, 500, $fs-base, $text-primary);
 }
 
 @mixin subtitle-muted($size: $fs-lg) {

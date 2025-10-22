@@ -11,10 +11,10 @@
 // =================================
 
 @mixin button-base(
-  $bg: $background-primary,
-  $color: $text-main,
+  $bg: $bg-surface,
+  $color: $text-primary,
   $hover-bg: color.scale($bg, $lightness: -5%),
-  $hover-color: $text-main
+  $hover-color: $text-primary
 ) {
   cursor: pointer;
   display: inline-block;
@@ -67,7 +67,7 @@
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: $background-primary;
+  background-color: $bg-surface;
   background-clip: border-box;
   border: 1px solid $disabled-border;
   border-radius: $rounded-md;
@@ -88,7 +88,7 @@
 
 @mixin card-header {
   padding: $spacing-sm $spacing-md;
-  background-color: $background-secondary;
+  background-color: $bg-section;
   border-bottom: 1px solid $disabled-border;
   font-weight: 600;
   font-family: $font-title;
@@ -98,13 +98,13 @@
   flex: 1 1 auto;
   padding: $spacing-md;
   font-family: $font-text;
-  color: $text-main;
+  color: $text-primary;
   font-size: $fs-base;
 }
 
 @mixin card-footer {
   padding: $spacing-sm $spacing-md;
-  background-color: $background-secondary;
+  background-color: $bg-section;
   border-top: 1px solid $disabled-border;
   font-size: $fs-sm;
   color: $text-muted;
