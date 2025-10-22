@@ -7,27 +7,46 @@
 @use '../base/mixins' as *;
 
 .intro {
-  background-color: $bg-brand;
+  background-color: $bg-accent;
+  padding-block: 5rem;
+
+  @include media-breakpoint-down($bp-md) {
+    padding-block: 3rem;
+  }
 
   &__title {
-    @include page-title($fs-xxxl, $text-inverse);
+    @include page-title();
     text-transform: uppercase;
+
+    @include media-breakpoint-down($bp-md) {
+      font-size: $fs-xxl;
+    }
   }
 
   &__subtitle {
-    @include title();
-    color: $text-inverse;
+    @include title($fs-xxl, $text-accent);
+
+    @include media-breakpoint-down($bp-md) {
+      font-size: $fs-lg;
+    }
   }
 
   &__text {
-    @include text();
-    color: $text-inverse;
-    font-size: $fs-xl;
+    @include text($fs-lg);
+
+    @include media-breakpoint-down($bp-md) {
+      font-size: $fs-md;
+    }
   }
 
   &__hr {
-    height: 8px;
+    height: 4px;
     width: 5rem;
-    background-color: $text-inverse;
+    background-color: $text-accent;
+    border: none;
+
+    @include media-breakpoint-down($bp-md) {
+      display: none;
+    }
   }
 }

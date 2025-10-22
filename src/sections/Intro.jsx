@@ -1,13 +1,13 @@
 
 function Intro() {
   return (
-    <section className="intro shadow-3 mb-8">
-      <div className="container-fluid text-center p-5">
-        <h1 className="intro__title mb-2">Football players</h1>
+    <section className="intro shadow-2 mb-8">
+      <div className="container-fluid text-center">
+        <h1 className="intro__title mb-3">Football players</h1>
         
-        <div className="d-flex justify-center align-center mb-2">
-          <hr className="intro__hr me-2" />
-          <h2 className="intro__subtitle mb-0 me-2">Season 2025-2026</h2>
+        <div className="d-flex justify-center align-center gap-md mb-3">
+          <hr className="intro__hr" />
+          <h2 className="intro__subtitle mb-0">Season 2025-2026</h2>
           <hr className="intro__hr" />
         </div>
 
