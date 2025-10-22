@@ -25,16 +25,16 @@
   @include custom-text($font-title, 700, $size, $color);
 }
 
-@mixin title($size: $fs-xxl) {
-  @include custom-text($font-title, 700, $size, $text-primary);
+@mixin title($size: $fs-xxl, $color: $text-primary) {
+  @include custom-text($font-title, 700, $size, $color);
 }
 
-@mixin subtitle($size: $fs-xl) {
-  @include custom-text($font-title, 600, $size, $text-secondary);
+@mixin subtitle($size: $fs-xl, $color: $text-secondary) {
+  @include custom-text($font-title, 600, $size, $color);
 }
 
-@mixin text {
-  @include custom-text($font-text, 400, $fs-base, $text-secondary);
+@mixin text($size: $fs-base, $color: $text-secondary) {
+  @include custom-text($font-text, 400, $size, $color);
 }
 
 @mixin footer-text {
@@ -45,8 +45,8 @@
   @include custom-text($font-title, 500, $size, $text-muted);
 }
 
-@mixin text-muted {
-   @include custom-text($font-text, 400, $fs-base, $text-muted);
+@mixin text-muted($size: $fs-base) {
+   @include custom-text($font-text, 400, $size, $text-muted);
 }
 
 // =================================
