@@ -104,11 +104,20 @@
 //   COLORS
 // =================================
 
-.bg-brand { background-color: $bg-brand; }
-.bg-accent { background-color: $bg-accent; }
+// Background utilities
+.bg-brand   { background-color: $bg-brand; }
+.bg-accent  { background-color: $bg-accent; }
+.bg-surface { background-color: $bg-surface; }
+.bg-page    { background-color: $bg-page; }
 
-.text-light { color: $text-inverse; }
+// Text utilities
+.text-primary { color: $text-primary; }
+.text-secondary { color: $text-secondary; }
 .text-accent { color: $text-accent; }
+.text-light, .text-inverse {
+  color: $text-inverse;
+}
+.text-muted { color: $text-muted; }
 
 // =================================
 //   VISIBILITY
