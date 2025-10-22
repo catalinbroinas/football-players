@@ -69,12 +69,12 @@
 
 // Gaps (flex & grid)
 .gap-0 { gap: 0; }
-.gap-xs { gap: $spacing-xs; }
-.gap-sm { gap: $spacing-sm; }
-.gap-md { gap: $spacing-md; }
-.gap-lg { gap: $spacing-lg; }
+.gap-xs, .gap-1 { gap: $spacing-xs; }
+.gap-sm, .gap-2 { gap: $spacing-sm; }
+.gap-md, .gap-3 { gap: $spacing-md; }
+.gap-lg, .gap-4 { gap: $spacing-lg; }
 .gap-lg2 { gap: $spacing-lg2; }
-.gap-xl { gap: $spacing-xl; }
+.gap-xl, .gap-5 { gap: $spacing-xl; }
 
 .gap-y-0 { column-gap: 0; }
 .gap-y-xs { column-gap: $spacing-xs; }
