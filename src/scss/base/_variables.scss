@@ -13,8 +13,8 @@
 $bg-page: #fbfbfb;
 $bg-surface: #ffffff;
 $bg-section: #f5f5f5;
-$bg-brand: #304ffe;
-$bg-accent: #eceff1;
+$bg-brand: #651FFF;
+$bg-accent: #ede7f6;
 
 // Hover & active
 $bg-brand-hover: color.scale($bg-brand, $lightness: -10%);
@@ -27,7 +27,7 @@ $text-primary: #332d2d;
 $text-secondary: #4b5563;
 $text-muted: #6b7280;
 $text-inverse: #ffffff;
-$text-accent: #1e3a8a;
+$text-accent: #5e35b1;
 
 // Borders & dividers
 $border-default: #d1d5db;
@@ -40,8 +40,8 @@ $disabled-text: #888;
 $disabled-border: #ccc;
 
 // Forms
-$form-border: #607d8b;
-$form-border-focus: #455a64;
+$form-border: #7e57c2;
+$form-border-focus: #5e35b1;
 $checkbox-border: $form-border;
 $checkbox-checked: $form-border-focus;
 $checkbox-label: $form-border-focus;
