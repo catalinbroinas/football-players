@@ -38,3 +38,7 @@ $spacing-utilities: (
 .m-auto   { margin: auto; }
 .mx-auto  { margin: 0 auto; }
 .my-auto  { margin: auto 0; }
+.ms-auto  { margin-left: auto; }
+.me-auto  {  margin-right: auto; }
+.mb-auto  { margin-bottom: auto; }
+.mt-auto  { margin-top: auto; }
