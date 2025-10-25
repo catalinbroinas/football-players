@@ -12,41 +12,57 @@
 @mixin custom-text(
   $font-family: $font-text, 
   $font-weight: 400, 
-  $font-size: 1rem, 
-  $color: $text-primary
+  $font-size: $fs-base,
+  $color: $text-primary,
+  $line-height: 1.5,
+  $responsive: false
 ) {
   font-family: $font-family;
   font-weight: $font-weight;
   font-size: $font-size;
   color: $color;
+  line-height: $line-height;
+
+  @if $responsive == true {
+    @include media-breakpoint-down($bp-md) {
+      font-size: calc($font-size * 0.9);
+    }
+  }
 }
 
+// Headings
 @mixin page-title($size: $fs-xxxl, $color: $text-primary) {
-  @include custom-text($font-title, 700, $size, $color);
+  @include custom-text($font-title, 700, $size, $color, 1.1, true);
 }
 
 @mixin title($size: $fs-xxl, $color: $text-primary) {
-  @include custom-text($font-title, 700, $size, $color);
+  @include custom-text($font-title, 700, $size, $color, 1.3, true);
 }
 
 @mixin subtitle($size: $fs-xl, $color: $text-secondary) {
-  @include custom-text($font-title, 600, $size, $color);
+  @include custom-text($font-title, 600, $size, $color, 1.4, true);
 }
 
+// Body text
 @mixin text($size: $fs-base, $color: $text-secondary) {
-  @include custom-text($font-text, 400, $size, $color);
-}
-
-@mixin footer-text {
-  @include custom-text($font-title, 500, $fs-base, $text-primary);
-}
-
-@mixin subtitle-muted($size: $fs-lg) {
-  @include custom-text($font-title, 500, $size, $text-muted);
+  @include custom-text($font-text, 400, $size, $color, 1.6, true);
 }
 
 @mixin text-muted($size: $fs-base) {
-   @include custom-text($font-text, 400, $size, $text-muted);
+  @include custom-text($font-text, 400, $size, $text-muted, 1.6, true);
+}
+
+@mixin lead {
+  @include custom-text($font-text, 400, $fs-lg, $text-secondary, 1.8, true);
+}
+
+@mixin small-text {
+  @include custom-text($font-text, 400, $fs-sm, $text-muted, 1.5);
+}
+
+@mixin footer-text {
+  @include custom-text($font-text, 500, $fs-sm, $text-secondary, 1.4);
+  opacity: 0.9;
 }
 
 // =================================
