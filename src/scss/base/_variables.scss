@@ -132,7 +132,7 @@ $bp-xl: 1200px;
 $bp-xxl: 1400px;
 
 // =================================
-//   BORDERS
+//   BORDERS & ROUNDED
 // =================================
 
 // Rounded
@@ -142,3 +142,17 @@ $rounded-md: 0.5rem;
 $rounded-lg: 0.75rem;
 $rounded-xl: 1rem;
 $rounded-xxl: 1.5rem;
+
+// Map for border-radius utilities
+$rounded-map: (
+  0: 0,
+  1: 0.2rem,
+  2: 0.25rem,
+  3: 0.3rem,
+  4: 0.375rem,
+  5: 0.5rem,
+  6: 0.75rem,
+  7: 1rem,
+  8: 1.25rem,
+  9: 1.5rem
+);

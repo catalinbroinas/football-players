@@ -63,22 +63,6 @@
 .h-100  { height: 100%; }
 
 // =================================
-//   BORDERS
-// =================================
-
-// Border
-.border-0 { border: none; }
-
-// Border radius
-.rounded-0    { border-radius: 0; }
-.rounded-xs   { border-radius: $rounded-xs; }
-.rounded-sm   { border-radius: $rounded-sm; }
-.rounded-md   { border-radius: $rounded-md; }
-.rounded-lg   { border-radius: $rounded-lg; }
-.rounded-xl   { border-radius: $rounded-xl; }
-.rounded-xxl  { border-radius: $rounded-xxl; }
-
-// =================================
 //   BACKGROUNDS
 // =================================
 .bg-brand   { background-color: $bg-brand; }
