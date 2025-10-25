@@ -83,8 +83,47 @@ $spacing-lg2: 2rem;
 $spacing-xl: 3rem;
 
 // =================================
+//   SPACING MAPS
+// =================================
+
+$spacing-map: (
+  0: 0,
+  1: $spacing-xs,
+  2: $spacing-sm,
+  3: $spacing-md,
+  4: $spacing-lg,
+  lg2: $spacing-lg2,
+  5: $spacing-xl
+);
+
+$spacing-map-extend: (
+  0: 0,
+  1: $spacing-xs,
+  2: $spacing-sm,
+  3: $spacing-md,
+  4: $spacing-lg,
+  lg2: $spacing-lg2,
+  5: $spacing-xl,
+  6: 3.5rem,
+  7: 4rem,
+  8: 5rem,
+  9: 6rem,
+  10: 8rem
+);
+
+$gap-map: $spacing-map;
+
+// =================================
 //   BREAKPOINTS
 // =================================
+
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
 
 $bp-sm: 576px;
 $bp-md: 768px;
