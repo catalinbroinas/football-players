@@ -1,0 +1,40 @@
+// =================================
+//   SPACING
+// =================================
+
+// Imports
+@use 'sass:map';
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// =================================
+//   CLASSES
+// =================================
+
+$spacing-utilities: (
+  (m, margin, $spacing-map),
+  (mb, margin-bottom, $spacing-map-extend),
+  (me, margin-right, $spacing-map),
+  (p, padding, $spacing-map),
+  (px, padding-inline, $spacing-map),
+  (py, padding-block, $spacing-map)
+);
+
+@each $prefix, $property, $map in $spacing-utilities {
+  @each $size in map.keys($map) {
+    .#{$prefix}-#{$size} {
+      @include spacing($map, $property, $size);
+    }
+
+    @each $bp in map.keys($breakpoints) {
+      .#{$prefix}-#{$bp}-#{$size} {
+        @include spacing($map, $property, $size, $bp);
+      }
+    }
+  }
+}
+
+// Margin auto
+.m-auto   { margin: auto; }
+.mx-auto  { margin: 0 auto; }
+.my-auto  { margin: auto 0; }
