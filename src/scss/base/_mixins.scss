@@ -3,6 +3,7 @@
 // =================================
 
 // Imports
+@use 'sass:map';
 @use 'variables' as *;
 
 // =================================
@@ -63,6 +64,24 @@
 @mixin footer-text {
   @include custom-text($font-text, 500, $fs-sm, $text-secondary, 1.4);
   opacity: 0.9;
+}
+
+// =================================
+//   SPACING
+// =================================
+
+// Used for margin, padding, gap.
+@mixin spacing($map, $property, $size, $breakpoint: null) {
+  $value: map.get($map, $size);
+
+  @if $breakpoint == null {
+    #{$property}: $value;
+  } @else {
+    $min-width: map.get($breakpoints, $breakpoint);
+    @media (min-width: $min-width) {
+      #{$property}: $value;
+    }
+  }
 }
 
 // =================================
