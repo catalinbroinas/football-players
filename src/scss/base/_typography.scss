@@ -1,0 +1,11 @@
+// =================================
+//   TYPOGRAPHY
+// =================================
+
+// Imports
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.footer-text {
+  @include footer-text;
+}
