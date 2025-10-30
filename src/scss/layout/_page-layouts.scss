@@ -10,3 +10,18 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
+
+.main-content {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: $spacing-lg2;
+
+  @include media-breakpoint-down($bp-xl) {
+    grid-template-columns: 200px 1fr;
+    gap: $spacing-lg;
+  }
+
+  @include media-breakpoint-down($bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
