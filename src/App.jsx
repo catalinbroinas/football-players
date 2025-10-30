@@ -1,5 +1,5 @@
 import Intro from './sections/Intro.jsx';
-import MainContent from './sections/Main.jsx';
+import MainContent from './sections/MainContent.jsx';
 import Footer from './sections/Footer.jsx';
 
 function App() {
