@@ -4,6 +4,7 @@
 
 // Imports
 @use '../base' as *;
+@use 'layout-mixins' as *;
 
 .page-layout {
   min-height: 100vh;
@@ -24,4 +25,9 @@
   @include media-breakpoint-down($bp-md) {
     grid-template-columns: 1fr;
   }
+}
+
+.player-list {
+  @include grid-fill(300px);
+  gap: $spacing-lg;
 }

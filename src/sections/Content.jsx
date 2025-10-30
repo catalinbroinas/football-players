@@ -1,7 +1,10 @@
+import PlayerList from "../components/PlayerList";
 
 function Content() {
   return (
-    <section className="content"></section>
+    <section className="content">
+      <PlayerList />
+    </section>
   );
 }
 
