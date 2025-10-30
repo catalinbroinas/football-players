@@ -1,13 +1,13 @@
 import Sidebar from "./Sidebar";
 import Content from "./Content";
 
-function Main() {
+function MainContent() {
   return (
-    <div className="container">
+    <div className="main-content">
       <Sidebar />
       <Content />
     </div>
   );
 }
 
-export default Main;
+export default MainContent;
