@@ -1,6 +1,7 @@
+import { getAge } from "../utils/dateUtils";
 
 function CardPlayer({ image, name, dateOfBirth, position, team }) {
-  const age = 20;
+  const age = getAge(dateOfBirth);
 
   return (
     <div className="card card-player">
