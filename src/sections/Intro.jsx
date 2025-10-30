@@ -1,7 +1,7 @@
 
 function Intro() {
   return (
-    <section className="intro shadow-2 mb-8">
+    <section className="intro shadow-2">
       <div className="container-fluid text-center">
         <h1 className="intro__title mb-2 mb-md-3">Football players</h1>
         
