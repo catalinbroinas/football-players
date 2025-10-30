@@ -16,8 +16,8 @@ function CardPlayer({ image, name, dateOfBirth, position, team }) {
 
       <div className="card-body">
         <div className="d-flex justify-content-between align-items-center">
-          <p className="card-text m-0">{age} years</p>
-          <p className="card-text m-0">{position}</p>
+          <p className="card-text">{age} years</p>
+          <p className="card-text">{position}</p>
         </div>
       </div>
     </div>

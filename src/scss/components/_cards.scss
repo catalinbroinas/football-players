@@ -5,7 +5,12 @@
 // Imports
 @use 'sass:color';
 @use '../base/variables' as *;
+@use '../base/mixins' as *;
 @use 'components-mixins' as components;
+
+// =================================
+//   CARD
+// =================================
 
 // Card container
 .card {
@@ -30,4 +35,34 @@
 // Card footer
 .card-footer {
   @include components.card-footer;
+}
+
+// =================================
+//   CARD PLAYER
+// =================================
+
+.card-player {
+  .card-header {
+    text-align: center;
+    background-color: $bg-page;
+  }
+
+  .card-body {
+    padding: $spacing-sm $spacing-lg;
+  }
+
+  .card-title {
+    @include title(1.35rem, $text-primary);
+    margin-bottom: 0;
+  }
+
+  .card-subtitle {
+    @include subtitle(1rem, $text-accent);
+    margin-bottom: 0;
+  }
+
+  .card-text {
+    @include text();
+    margin-bottom: 0;
+  }
 }
