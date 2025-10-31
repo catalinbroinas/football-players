@@ -49,20 +49,27 @@
 }
 
 .player-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: $spacing-xl;
 
   @include media-breakpoint-down($bp-xxl) {
     gap: $spacing-lg2;
   }
 
+  @include media-breakpoint-down($bp-lg) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-lg2;
+  }
+
   @include media-breakpoint-down($bp-md) {
+    grid-template-columns: repeat(2, 1fr);
     gap: $spacing-lg;
   }
 
   @include media-breakpoint-down($bp-sm) {
+    grid-template-columns: 1fr;
+    padding-inline: $spacing-md;
     gap: $spacing-md;
   }
 }
