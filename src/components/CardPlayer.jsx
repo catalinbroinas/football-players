@@ -6,7 +6,7 @@ function CardPlayer({ image, name, dateOfBirth, position, team }) {
   return (
     <div className="card card-player">
       <div className="card-image">
-        <img src={image} alt={`Photo of ${name}`} className="img-fluid" />
+        <img src={image} alt={`Photo of ${name}`} className="card-img" />
       </div>
 
       <div className="card-header">

@@ -42,6 +42,16 @@
 // =================================
 
 .card-player {
+  .card-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .card-header {
     text-align: center;
     background-color: $bg-page;
