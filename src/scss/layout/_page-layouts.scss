@@ -49,20 +49,20 @@
 }
 
 .player-list {
-  @include grid-fill(300px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   gap: $spacing-xl;
 
   @include media-breakpoint-down($bp-xxl) {
-    @include grid-fill(250px);
     gap: $spacing-lg2;
   }
 
   @include media-breakpoint-down($bp-md) {
-    @include grid-fill(200px);
     gap: $spacing-lg;
   }
 
   @include media-breakpoint-down($bp-sm) {
-    row-gap: $spacing-md;
+    gap: $spacing-md;
   }
 }
