@@ -52,6 +52,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: $spacing-xl;
+  align-items: start;
 
   @include media-breakpoint-down($bp-xxl) {
     gap: $spacing-lg2;
