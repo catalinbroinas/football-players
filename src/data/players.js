@@ -1,3 +1,4 @@
+import images from "./images";
 
 const players = [
   {
@@ -6,7 +7,7 @@ const players = [
     team: 'Tottenham',
     position: 'Forward',
     dateOfBirth: '1996-11-23',
-    image: 'https://images.pexels.com/photos/31067777/pexels-photo-31067777.jpeg',
+    image: images.jamesMaddison,
   },
   {
     id: crypto.randomUUID(),
@@ -14,7 +15,7 @@ const players = [
     team: 'Arsenal',
     position: 'Midfielder',
     dateOfBirth: '1999-01-14',
-    image: 'https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg',
+    image: images.declanRice
   },
   {
     id: crypto.randomUUID(),
@@ -22,7 +23,7 @@ const players = [
     team: 'Chelsea',
     position: 'Midfielder',
     dateOfBirth: '2002-06-05',
-    image: 'https://images.pexels.com/photos/31067777/pexels-photo-31067777.jpeg',
+    image: images.colePalmer
   },
   {
     id: crypto.randomUUID(),
@@ -30,7 +31,7 @@ const players = [
     team: 'Manchester City',
     position: 'Forward',
     dateOfBirth: '2000-07-21',
-    image: 'https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg',
+    image: images.erlingHaaland
   },
   {
     id: crypto.randomUUID(),
@@ -38,7 +39,7 @@ const players = [
     team: 'Manchester Utd',
     position: 'Midfielder',
     dateOfBirth: '1994-08-09',
-    image: 'https://images.pexels.com/photos/31067777/pexels-photo-31067777.jpeg',
+    image: images.brunoFernandes
   },
   {
     id: crypto.randomUUID(),
@@ -46,7 +47,7 @@ const players = [
     team: 'Liverpool',
     position: 'Forward',
     dateOfBirth: '1992-06-15',
-    image: 'https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg',
+    image: images.mohamedSalah
   },
 ];
 
