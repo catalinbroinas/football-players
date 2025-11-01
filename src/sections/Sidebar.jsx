@@ -1,9 +1,9 @@
 import FilterForm from "../components/Filters/FilterForm";
 
-function Sidebar() {
+function Sidebar({ setSelectedTeam }) {
   return (
     <aside className="sidebar">
-      <FilterForm />
+      <FilterForm setSelectedTeam={setSelectedTeam} />
     </aside>
   );
 }

@@ -1,7 +1,11 @@
 import players from "../../data/players";
 
-function SelectTeam() {
+function SelectTeam({ setSelectedTeam }) {
   const teams = [...new Set(players.map(player => player.team))].sort();
+
+  const handleChange = (e) => {
+    setSelectedTeam(e.target.value);
+  };
 
   return (
     <div className="form-row">
@@ -17,6 +21,7 @@ function SelectTeam() {
         name="team" 
         className="form-outline" 
         aria-label="Select team"
+        onChange={handleChange}
       >
         <option value="">All teams</option>
         {teams.map(team => (

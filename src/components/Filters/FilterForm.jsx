@@ -1,13 +1,13 @@
 import SelectTeam from "./SelectTeam";
 
-function FilterForm() {
+function FilterForm({ setSelectedTeam }) {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
   return (
     <form className="form-container" onSubmit={handleSubmit}>
-      <SelectTeam />
+      <SelectTeam setSelectedTeam={setSelectedTeam} />
     </form>
   );
 }

@@ -1,9 +1,9 @@
 import PlayerList from "../components/PlayerList";
 
-function Content() {
+function Content({ players }) {
   return (
     <section className="content">
-      <PlayerList />
+      <PlayerList players={players} />
     </section>
   );
 }

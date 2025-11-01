@@ -1,7 +1,6 @@
 import CardPlayer from "./CardPlayer";
-import players from "../data/players";
 
-function PlayerList() {
+function PlayerList({ players }) {
   return (
     <div className="player-list">
       {players.map(player => (
