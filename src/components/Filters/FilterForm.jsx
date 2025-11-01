@@ -1,3 +1,4 @@
+import SelectTeam from "./SelectTeam";
 
 function FilterForm() {
   const handleSubmit = (e) => {
@@ -6,6 +7,7 @@ function FilterForm() {
 
   return (
     <form className="form-container" onSubmit={handleSubmit}>
+      <SelectTeam />
     </form>
   );
 }
