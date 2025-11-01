@@ -17,7 +17,6 @@ function SelectTeam({ teams, setSelectedTeam }) {
         id="team-select" 
         name="team" 
         className="form-outline" 
-        aria-label="Select team"
         onChange={handleChange}
       >
         <option value="">All teams</option>
