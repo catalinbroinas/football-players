@@ -1,7 +1,10 @@
+import FilterForm from "../components/Filters/FilterForm";
 
 function Sidebar() {
   return (
-    <aside className="sidebar"></aside>
+    <aside className="sidebar">
+      <FilterForm />
+    </aside>
   );
 }
 
