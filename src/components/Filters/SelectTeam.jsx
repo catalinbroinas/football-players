@@ -16,7 +16,7 @@ function SelectTeam({ teams, setSelectedTeam }) {
       <select 
         id="team-select" 
         name="team" 
-        className="form-outline" 
+        className="form-outline form-select" 
         onChange={handleChange}
       >
         <option value="">All teams</option>

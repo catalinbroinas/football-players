@@ -72,3 +72,11 @@
 .checkbox-label {
   @include forms.checkbox-label();
 }
+
+// =================================
+//   CHECKBOX
+// =================================
+
+.form-select {
+  @include forms.form-select();
+}
