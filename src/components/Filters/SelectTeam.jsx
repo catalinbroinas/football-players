@@ -1,8 +1,5 @@
-import players from "../../data/players";
 
-function SelectTeam({ setSelectedTeam }) {
-  const teams = [...new Set(players.map(player => player.team))].sort();
-
+function SelectTeam({ teams, setSelectedTeam }) {
   const handleChange = (e) => {
     setSelectedTeam(e.target.value);
   };
