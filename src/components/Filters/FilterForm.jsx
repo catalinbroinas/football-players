@@ -1,4 +1,5 @@
 import SelectTeam from "./SelectTeam";
+import PositionFilter from "./PositionFilter";
 import players from "../../data/players";
 
 function FilterForm({ setSelectedTeam }) {
@@ -7,6 +8,7 @@ function FilterForm({ setSelectedTeam }) {
   return (
     <form className="form-container">
       <SelectTeam teams={teams} setSelectedTeam={setSelectedTeam} />
+      <PositionFilter />
     </form>
   );
 }
