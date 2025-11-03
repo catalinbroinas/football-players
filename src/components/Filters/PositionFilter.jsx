@@ -6,8 +6,8 @@ function PositionFilter() {
     <div className="form-row">
       <p className="text fw-bold w-100 mb-0">Choose position</p>
 
-      <div className="form-row">
-        <div className="form-outline checkbox-wrapper">
+      <div className="form-column">
+        <div className="checkbox-wrapper">
           <input
             type="checkbox"
             id="position-all"
@@ -24,7 +24,7 @@ function PositionFilter() {
         </div>
 
         {positions.map(position => (
-          <div key={position} className="form-outline checkbox-wrapper">
+          <div key={position} className="checkbox-wrapper">
             <input
               type="checkbox"
               id={`position-${position.toLowerCase()}`}

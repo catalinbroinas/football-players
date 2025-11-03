@@ -27,6 +27,13 @@
   }
 }
 
+.form-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-md;
+}
+
 .form-outline {
   flex-grow: 1;
   position: relative;
@@ -56,7 +63,7 @@
 //   CHECKBOX
 // =================================
 
-.form-outline.checkbox-wrapper {
+.checkbox-wrapper {
   @include forms.checkbox-wrapper;
 }
 
