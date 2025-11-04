@@ -5,18 +5,23 @@ import players from "../data/players";
 
 function MainContent() {
   const[selectedTeam, setSelectedTeam] = useState('');
+  const [selectedPositions, setSelectedPositions] = useState(['all']);
 
   const filteredPlayers = players.filter(player => {
     const teamMatch = selectedTeam 
       ? player.team === selectedTeam
       : true;
 
-    return teamMatch;
+    const positionMatch = 
+      selectedPositions.includes('all') ||
+      selectedPositions.includes(player.position.toLowerCase());
+
+    return teamMatch && positionMatch;
   });
 
   return (
     <div className="main-content">
-      <Sidebar setSelectedTeam={setSelectedTeam} />
+      <Sidebar setSelectedTeam={setSelectedTeam} setSelectedPositions={setSelectedPositions} />
       <Content players={filteredPlayers} />
     </div>
   );
