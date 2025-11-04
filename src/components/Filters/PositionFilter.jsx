@@ -1,6 +1,30 @@
 
-function PositionFilter() {
+function PositionFilter({ selectedPositions, setSelectedPositions }) {
   const positions = ["Goalkeeper", "Defender", "Midfielder", "Forward"];
+
+  const handleChange = (e) => {
+    const { value, checked } = e.target;
+
+    if (value === 'all') {
+      return setSelectedPositions(['all']);
+    }
+
+    let updatedPositions = [...selectedPositions];
+
+    if (checked) {
+      updatedPositions = updatedPositions
+        .filter(pos => pos !== 'all')
+        .concat(value);
+    } else {
+      updatedPositions = updatedPositions.filter(pos => pos !== value);
+    }
+
+    if (updatedPositions.length === 0) {
+      updatedPositions = ['all'];
+    }
+
+    setSelectedPositions(updatedPositions);
+  };
 
   return (
     <div className="form-row">
@@ -13,7 +37,8 @@ function PositionFilter() {
             id="position-all"
             value="all"
             className="checkbox-input"
-            defaultChecked={true}
+            checked={selectedPositions.includes('all')}
+            onChange={handleChange}
           />
 
           <label
@@ -29,6 +54,8 @@ function PositionFilter() {
               type="checkbox"
               id={`position-${position.toLowerCase()}`}
               value={position.toLowerCase()}
+              checked={selectedPositions.includes(position.toLowerCase())}
+              onChange={handleChange}
               className="checkbox-input"
             />
 

@@ -21,7 +21,11 @@ function MainContent() {
 
   return (
     <div className="main-content">
-      <Sidebar setSelectedTeam={setSelectedTeam} setSelectedPositions={setSelectedPositions} />
+      <Sidebar 
+        setSelectedTeam={setSelectedTeam}
+        selectedPositions={selectedPositions}
+        setSelectedPositions={setSelectedPositions}
+      />
       <Content players={filteredPlayers} />
     </div>
   );
