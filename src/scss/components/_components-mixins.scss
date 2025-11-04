@@ -109,3 +109,31 @@
   font-size: $fs-sm;
   color: $text-muted;
 }
+
+// =================================
+//   ALERTS
+// =================================
+
+@mixin alert(
+  $bg: $bg-page,
+  $color: $text-secondary,
+  $padding: 1rem,
+  $rounded: $rounded-md,
+  $border: none,
+  $shadow: 0 2px 4px rgba(0,0,0,0.05)
+) {
+  background-color: $bg;
+  color: $color;
+  padding: $padding;
+  border-radius: $rounded;
+  border: $border;
+  box-shadow: $shadow;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: $fs-base;
+}
+
+@mixin alert-info {
+  @include alert($info-bg, $info-text, 1rem, $rounded-md, 1px solid $info-border);
+}

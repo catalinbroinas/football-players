@@ -6,8 +6,8 @@ function Content({ players }) {
       {players.length > 0 ? (
         <PlayerList players={players} />
       ) : (
-        <div className="alert">
-          <p className="text">No players found.</p>
+        <div className="alert alert-info" role="alert">
+          No players match your filters.
         </div>
       )}
     </section>
