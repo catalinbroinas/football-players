@@ -3,7 +3,13 @@ import PlayerList from "../components/PlayerList";
 function Content({ players }) {
   return (
     <section className="content">
-      <PlayerList players={players} />
+      {players.length > 0 ? (
+        <PlayerList players={players} />
+      ) : (
+        <div className="alert">
+          <p className="text">No players found.</p>
+        </div>
+      )}
     </section>
   );
 }
