@@ -6,9 +6,13 @@ import players from "../data/players";
 function MainContent() {
   const[selectedTeam, setSelectedTeam] = useState('');
 
-  const filteredPlayers = selectedTeam
-    ? players.filter(player => player.team === selectedTeam)
-    : players;
+  const filteredPlayers = players.filter(player => {
+    const teamMatch = selectedTeam 
+      ? player.team === selectedTeam
+      : true;
+
+    return teamMatch;
+  });
 
   return (
     <div className="main-content">
