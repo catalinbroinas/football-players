@@ -1,5 +1,6 @@
 import SelectTeam from "./SelectTeam";
 import PositionFilter from "./PositionFilter";
+import AgeFilter from "./AgeFilter";
 import players from "../../data/players";
 
 function FilterForm({ setSelectedTeam, selectedPositions, setSelectedPositions }) {
@@ -12,6 +13,7 @@ function FilterForm({ setSelectedTeam, selectedPositions, setSelectedPositions }
         selectedPositions= {selectedPositions}
         setSelectedPositions={setSelectedPositions}
       />
+      <AgeFilter />
     </form>
   );
 }
