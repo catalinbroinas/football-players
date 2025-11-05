@@ -34,7 +34,10 @@ function AgeFilter() {
         </div>
       </div>
 
-      <button className="btn-primary mx-auto">Apply</button>
+      <button
+        type="button"
+        className="btn-primary mx-auto"
+      >Apply</button>
     </div>
   );
 }
