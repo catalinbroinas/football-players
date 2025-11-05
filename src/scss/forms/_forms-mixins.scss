@@ -15,7 +15,7 @@
   $bg: $bg-page,
   $color: $text-primary,
   $font-size: $fs-base,
-  $padding: 0.5rem,
+  $padding: 0.5rem 1rem,
   $font-family: $font-form
 ) {
   font-family: $font-family;
@@ -60,14 +60,14 @@
   $inside: false,
   $font-size: $fs-sm,
   $color: $text-secondary,
-  $top: 1.5rem,
+  $top: 0.5rem,
   $left: 0.5rem,
   $font-size-inside: $fs-md,
   $color-inside: $text-secondary
 ) {
   position: absolute;
   display: block;
-  transition-property: top, left, font-size, color;
+  transition-property: top, left, bottom, font-size, color;
   transition-duration: 0.3s;
   transition-timing-function: ease;
 
@@ -75,10 +75,11 @@
     cursor: text;
     top: $top;
     left: $left;
+    bottom: 0;
     font-size: $font-size-inside;
     color: $color-inside;
   } @else {
-    top: 0;
+    top: -0.75rem;
     left: 0;
     font-size: $font-size;
     color: $color;
