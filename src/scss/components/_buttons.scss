@@ -23,8 +23,8 @@
   @include components.button-base(
     $bg-accent,
     $text-accent,
-    color.scale($bg-accent, $lightness: -10%),
-    $text-primary
+    $text-primary,
+    color.scale($bg-accent, $lightness: -10%)
   );
 }
 
@@ -37,6 +37,7 @@
 .btn-primary-outline {
   @include components.button-base(
     transparent,
+    $bg-brand,
     $bg-brand,
     color.scale($bg-brand, $lightness: 90%)
   );

@@ -13,8 +13,8 @@
 @mixin button-base(
   $bg: $bg-surface,
   $color: $text-primary,
-  $hover-bg: color.scale($bg, $lightness: -5%),
-  $hover-color: $text-primary
+  $hover-color: $color,
+  $hover-bg: color.scale($bg, $lightness: -5%)
 ) {
   cursor: pointer;
   display: inline-block;
