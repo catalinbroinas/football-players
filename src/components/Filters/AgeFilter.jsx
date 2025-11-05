@@ -1,5 +1,11 @@
+import { useState } from "react";
 
-function AgeFilter() {
+function AgeFilter({ onApply }) {
+  const [ageRange, setAgeRange] = useState({
+    min: 16,
+    max: 40
+  });
+
   return (
     <div className="form-row">
       <p className="text fw-bold w-100 mb-0">Filter by age</p>
@@ -11,6 +17,8 @@ function AgeFilter() {
             id="min-age"
             className="form-control"
             placeholder="Min age"
+            value={ageRange.min}
+            onChange={(e) => setAgeRange({...ageRange, min: Number(e.target.value)})}
           />
 
           <label
@@ -25,6 +33,8 @@ function AgeFilter() {
             id="max-age"
             className="form-control"
             placeholder="Max age"
+            value={ageRange.max}
+            onChange={(e) => setAgeRange({...ageRange, max: Number(e.target.value)})}
           />
 
           <label
@@ -37,6 +47,8 @@ function AgeFilter() {
       <button
         type="button"
         className="btn-primary mx-auto"
+        onClick={() => onApply(ageRange)}
+        disabled={ageRange.min > ageRange.max}
       >Apply</button>
     </div>
   );

@@ -1,12 +1,18 @@
 import FilterForm from "../components/Filters/FilterForm";
 
-function Sidebar({ setSelectedTeam, selectedPositions, setSelectedPositions }) {
+function Sidebar({ 
+    setSelectedTeam, 
+    selectedPositions, 
+    setSelectedPositions,
+    onApply
+  }) {
   return (
     <aside className="sidebar">
-      <FilterForm 
+      <FilterForm
         setSelectedTeam={setSelectedTeam}
         selectedPositions={selectedPositions}
         setSelectedPositions={setSelectedPositions}
+        onApply={onApply}
       />
     </aside>
   );

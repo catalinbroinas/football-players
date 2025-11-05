@@ -3,7 +3,12 @@ import PositionFilter from "./PositionFilter";
 import AgeFilter from "./AgeFilter";
 import players from "../../data/players";
 
-function FilterForm({ setSelectedTeam, selectedPositions, setSelectedPositions }) {
+function FilterForm({ 
+    setSelectedTeam, 
+    selectedPositions, 
+    setSelectedPositions,
+    onApply
+  }) {
   const teams = [...new Set(players.map(player => player.team))].sort();
 
   return (
@@ -13,7 +18,7 @@ function FilterForm({ setSelectedTeam, selectedPositions, setSelectedPositions }
         selectedPositions= {selectedPositions}
         setSelectedPositions={setSelectedPositions}
       />
-      <AgeFilter />
+      <AgeFilter onApply={onApply} />
     </form>
   );
 }
