@@ -1,6 +1,19 @@
+import { useState } from "react";
 
-function AgeGroupFilter() {
-  const ageGroups = ['Teen', 'Young', 'Prime', 'Veteran'];
+function AgeGroupFilter({ minAge, maxAge, onChecked }) {
+  const ageGroups = [
+    { id: 'teen',    label: 'Teen (16–19)',    min: 16, max: 19 },
+    { id: 'young',   label: 'Young (20–24)',   min: 20, max: 24 },
+    { id: 'prime',   label: 'Prime (25–30)',   min: 25, max: 30 },
+    { id: 'veteran', label: 'Veteran (31+)',   min: 31, max: Infinity }
+  ];
+
+  const [ageRange, setAgeRange] = useState({
+    min: minAge,
+    max: maxAge
+  });
+
+  const handleChange = (e) => {};
 
   return(
     <div className="form-row">
@@ -8,12 +21,12 @@ function AgeGroupFilter() {
 
       <div className="form-column">
         <div className="checkbox-wrapper">
-          <input 
+          <input
             type="checkbox"
             id="all-ageGroup"
             className="checkbox-input"
             value="all"
-            defaultChecked={true}
+            onChange={handleChange}
           />
 
           <label 
@@ -23,18 +36,19 @@ function AgeGroupFilter() {
         </div>
 
         {ageGroups.map(ageGroup => (
-          <div key={ageGroup} className="checkbox-wrapper">
+          <div key={ageGroup.id} className="checkbox-wrapper">
             <input 
               type="checkbox"
-              id={`${ageGroup.toLowerCase()}-ageGroup`}
+              id={`${ageGroup.id}-ageGroup`}
               className="checkbox-input"
-              value={ageGroup.toLowerCase()}
+              value={ageGroup.id}
+              onChange={handleChange}
             />
 
             <label
-              htmlFor={`${ageGroup.toLowerCase()}-ageGroup`}
+              htmlFor={`${ageGroup.id}-ageGroup`}
               className="checkbox-label"
-            >{ageGroup}</label>
+            >{ageGroup.label}</label>
           </div>
         ))}
       </div>
