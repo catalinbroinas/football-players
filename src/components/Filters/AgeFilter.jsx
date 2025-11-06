@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-function AgeFilter({ onApply }) {
+function AgeFilter({ minAge, maxAge, onApply }) {
   const [ageRange, setAgeRange] = useState({
-    min: 16,
-    max: 40
+    min: minAge,
+    max: maxAge
   });
 
   return (

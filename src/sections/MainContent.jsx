@@ -7,9 +7,9 @@ import { getAge } from "../utils/dateUtils";
 function MainContent() {
   const[selectedTeam, setSelectedTeam] = useState('');
   const [selectedPositions, setSelectedPositions] = useState(['all']);
-   const [ageRange, setAgeRange] = useState({
-    min: 16,
-    max: 40
+  const [ageRange, setAgeRange] = useState({
+    min: null,
+    max: null
   });
 
   const filteredPlayers = players.filter(player => {
@@ -23,7 +23,9 @@ function MainContent() {
 
     const playerAge = getAge(player.dateOfBirth);
 
-    const ageMatch = playerAge >= ageRange.min && playerAge <= ageRange.max;
+    const ageMatch =
+      (ageRange.min === null || playerAge >= ageRange.min) &&
+      (ageRange.max === null || playerAge <= ageRange.max);
 
     return teamMatch && positionMatch && ageMatch;
   });
