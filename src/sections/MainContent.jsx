@@ -37,6 +37,7 @@ function MainContent() {
         selectedPositions={selectedPositions}
         setSelectedPositions={setSelectedPositions}
         onApply={setAgeRange}
+        onChecked={setAgeRange}
       />
       <Content players={filteredPlayers} />
     </div>

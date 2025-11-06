@@ -4,7 +4,8 @@ function Sidebar({
     setSelectedTeam, 
     selectedPositions, 
     setSelectedPositions,
-    onApply
+    onApply,
+    onChecked
   }) {
   return (
     <aside className="sidebar">
@@ -13,6 +14,7 @@ function Sidebar({
         selectedPositions={selectedPositions}
         setSelectedPositions={setSelectedPositions}
         onApply={onApply}
+        onChecked={onChecked}
       />
     </aside>
   );

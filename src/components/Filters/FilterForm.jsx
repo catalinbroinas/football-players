@@ -9,7 +9,8 @@ function FilterForm({
     setSelectedTeam, 
     selectedPositions, 
     setSelectedPositions,
-    onApply
+    onApply,
+    onChecked
   }) {
   const teams = [...new Set(players.map(player => player.team))].sort();
 
@@ -27,7 +28,7 @@ function FilterForm({
         selectedPositions= {selectedPositions}
         setSelectedPositions={setSelectedPositions}
       />
-      <AgeGroupFilter />
+      <AgeGroupFilter onChecked={onChecked} />
       <AgeFilter
         minAge={youngestPlayer}
         maxAge={oldestPlayer}

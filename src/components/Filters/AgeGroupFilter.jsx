@@ -8,13 +8,23 @@ function AgeGroupFilter({ minAge, maxAge, onChecked }) {
     { id: 'prime',   label: 'Prime (25–30)',   min: 25, max: 30 },
     { id: 'veteran', label: 'Veteran (31+)',   min: 31, max: Infinity }
   ];
+  const [selectedId, setSelectedId] = useState('all');
 
   const [ageRange, setAgeRange] = useState({
     min: minAge,
     max: maxAge
   });
 
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    const id = e.target.value;
+    setSelectedId(id);
+
+    const getItem = ageGroups.find(ageGroup => ageGroup.id === e.target.value);
+    const newRange = { min: Number(getItem.min), max: Number(getItem.max) };
+    
+    setAgeRange(newRange);
+    onChecked(newRange);
+  };
 
   return(
     <div className="form-row">
@@ -28,6 +38,7 @@ function AgeGroupFilter({ minAge, maxAge, onChecked }) {
               id={`${ageGroup.id}-ageGroup`}
               className="checkbox-input"
               value={ageGroup.id}
+              checked={selectedId === ageGroup.id}
               onChange={handleChange}
             />
 
