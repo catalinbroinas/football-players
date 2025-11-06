@@ -1,6 +1,7 @@
 import SelectTeam from "./SelectTeam";
 import PositionFilter from "./PositionFilter";
 import AgeFilter from "./AgeFilter";
+import AgeGroupFilter from "./AgeGroupFilter";
 import players from "../../data/players";
 import { getAge } from "../../utils/dateUtils";
 
@@ -26,6 +27,7 @@ function FilterForm({
         selectedPositions= {selectedPositions}
         setSelectedPositions={setSelectedPositions}
       />
+      <AgeGroupFilter />
       <AgeFilter
         minAge={youngestPlayer}
         maxAge={oldestPlayer}
