@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { useEffect } from "react";
 
-function AgeGroupFilter({ onChecked }) {
+function AgeGroupFilter({ minAge, maxAge, onChecked }) {
   const ageGroups = [
     { id: 'all',    label: 'All (16+)',    min: 16, max: Infinity },
     { id: 'teen',    label: 'Teen (16–19)',    min: 16, max: 19 },
@@ -9,12 +8,32 @@ function AgeGroupFilter({ onChecked }) {
     { id: 'prime',   label: 'Prime (25–30)',   min: 25, max: 30 },
     { id: 'veteran', label: 'Veteran (31+)',   min: 31, max: Infinity }
   ];
-  const [selectedId, setSelectedId] = useState('all');
+  const [ageRange, setAgeRange] = useState({
+    min: minAge,
+    max: maxAge
+  });
 
-  useEffect(() => {
-    const group = ageGroups.find(ageGroup => ageGroup.id === selectedId);
-    onChecked({ min: group.min, max: group.max });
-  }, [selectedId]);
+  const handleChange = (e) => {
+    const { value, checked } = e.target;
+    const group = ageGroups.find(ageGroup => ageGroup.id === value);
+
+    if (value === 'all') {
+      setAgeRange({ ...ageRange, min: group.min, max: group.max });
+    }
+
+    let updateAgeRange = {...ageRange};
+
+    if (checked) {
+      updateAgeRange = { min: group.min, max: group.max };
+    }
+
+    onChecked(updateAgeRange);
+  };
+
+  const isChecked = (e) => {
+     const group = ageGroups.find(ageGroup => ageGroup.id === e.target.value);
+    return group.min <= ageRange.min && group.max >= ageRange.max;
+  };
 
   return(
     <div className="form-row">
@@ -28,8 +47,8 @@ function AgeGroupFilter({ onChecked }) {
               id={`${ageGroup.id}-ageGroup`}
               className="checkbox-input"
               value={ageGroup.id}
-              checked={selectedId === ageGroup.id}
-              onChange={(e) => setSelectedId(e.target.value)}
+              checked={isChecked === true}
+              onChange={handleChange}
             />
 
             <label
