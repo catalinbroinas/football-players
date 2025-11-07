@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AgeGroupFilter({ minAge, maxAge, onChecked }) {
+function AgeGroupFilter({ onChecked }) {
   const ageGroups = [
     { id: 'all',    label: 'All (16+)',    min: 16, max: Infinity },
     { id: 'teen',    label: 'Teen (16–19)',    min: 16, max: 19 },
@@ -8,53 +8,76 @@ function AgeGroupFilter({ minAge, maxAge, onChecked }) {
     { id: 'prime',   label: 'Prime (25–30)',   min: 25, max: 30 },
     { id: 'veteran', label: 'Veteran (31+)',   min: 31, max: Infinity }
   ];
-  const [ageRange, setAgeRange] = useState({
-    min: minAge,
-    max: maxAge
-  });
+
+  const [selectedIds, setSelectedIds] = useState(['all']);
 
   const handleChange = (e) => {
-    const { value, checked } = e.target;
-    const group = ageGroups.find(ageGroup => ageGroup.id === value);
+    const id = e.target.value;
+    let newSelectedIds = [...selectedIds];
 
-    if (value === 'all') {
-      setAgeRange({ ...ageRange, min: group.min, max: group.max });
+    if (id === 'all') {
+      // Select only ALL
+      newSelectedIds = ['all'];
+    } else {
+      if (newSelectedIds.includes(id)) {
+        // Remove if already selected
+        newSelectedIds = newSelectedIds.filter(item => item !== id);
+      } else {
+        // Add selection
+        newSelectedIds.push(id);
+      }
+
+      // If one individual changed, ensure ALL is off
+      newSelectedIds = newSelectedIds.filter(item => item !== 'all');
+
+      // If every category is selected → auto ALL sync
+      const allIndividualIds = ageGroups
+        .map(g => g.id)
+        .filter(id => id !== 'all');
+
+      const everySelected = allIndividualIds.every(id =>
+        newSelectedIds.includes(id)
+      );
+
+      if (everySelected) {
+        newSelectedIds = ['all'];
+      }
     }
 
-    let updateAgeRange = {...ageRange};
+    setSelectedIds(newSelectedIds);
 
-    if (checked) {
-      updateAgeRange = { min: group.min, max: group.max };
-    }
+    // Compute min & max for selected groups
+    const selectedGroups = ageGroups.filter(g => newSelectedIds.includes(g.id));
 
-    onChecked(updateAgeRange);
+    const min = Math.min(...selectedGroups.map(g => g.min));
+    const max = Math.max(...selectedGroups.map(g => g.max));
+
+    onChecked({ min, max });
   };
 
-  const isChecked = (e) => {
-     const group = ageGroups.find(ageGroup => ageGroup.id === e.target.value);
-    return group.min <= ageRange.min && group.max >= ageRange.max;
-  };
-
-  return(
+  return (
     <div className="form-row">
-      <p className="text fw-bold w-100 mb-0">Filter by age group</p>
+      <p className="text fw-bold w-100 mb-0">
+        Filter by age group
+      </p>
 
       <div className="form-column">
         {ageGroups.map(ageGroup => (
           <div key={ageGroup.id} className="checkbox-wrapper">
-            <input 
+            <input
               type="checkbox"
               id={`${ageGroup.id}-ageGroup`}
               className="checkbox-input"
               value={ageGroup.id}
-              checked={isChecked === true}
+              checked={selectedIds.includes(ageGroup.id)}
               onChange={handleChange}
             />
-
             <label
               htmlFor={`${ageGroup.id}-ageGroup`}
               className="checkbox-label"
-            >{ageGroup.label}</label>
+            >
+              {ageGroup.label}
+            </label>
           </div>
         ))}
       </div>
