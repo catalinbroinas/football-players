@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { useEffect } from "react";
 
-function AgeGroupFilter({ minAge, maxAge, onChecked }) {
+function AgeGroupFilter({ onChecked }) {
   const ageGroups = [
     { id: 'all',    label: 'All (16+)',    min: 16, max: Infinity },
     { id: 'teen',    label: 'Teen (16–19)',    min: 16, max: 19 },
@@ -10,21 +11,10 @@ function AgeGroupFilter({ minAge, maxAge, onChecked }) {
   ];
   const [selectedId, setSelectedId] = useState('all');
 
-  const [ageRange, setAgeRange] = useState({
-    min: minAge,
-    max: maxAge
-  });
-
-  const handleChange = (e) => {
-    const id = e.target.value;
-    setSelectedId(id);
-
-    const getItem = ageGroups.find(ageGroup => ageGroup.id === e.target.value);
-    const newRange = { min: Number(getItem.min), max: Number(getItem.max) };
-    
-    setAgeRange(newRange);
-    onChecked(newRange);
-  };
+  useEffect(() => {
+    const group = ageGroups.find(ageGroup => ageGroup.id === selectedId);
+    onChecked({ min: group.min, max: group.max });
+  }, [selectedId]);
 
   return(
     <div className="form-row">
@@ -39,7 +29,7 @@ function AgeGroupFilter({ minAge, maxAge, onChecked }) {
               className="checkbox-input"
               value={ageGroup.id}
               checked={selectedId === ageGroup.id}
-              onChange={handleChange}
+              onChange={(e) => setSelectedId(e.target.value)}
             />
 
             <label
