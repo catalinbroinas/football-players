@@ -15,8 +15,8 @@ function AgeGroupFilter({ onChecked }) {
     const id = e.target.value;
     let newSelectedIds = [...selectedIds];
 
-    if (id === 'all') {
-      // Select only ALL
+    if (id === 'all' || newSelectedIds.length === 0) {
+      // Select 'all'
       newSelectedIds = ['all'];
     } else {
       if (newSelectedIds.includes(id)) {
@@ -27,10 +27,15 @@ function AgeGroupFilter({ onChecked }) {
         newSelectedIds.push(id);
       }
 
-      // If one individual changed, ensure ALL is off
+      // If one individual changed, auto deselect 'all'
       newSelectedIds = newSelectedIds.filter(item => item !== 'all');
 
-      // If every category is selected → auto ALL sync
+      // If no category is selected, auto select 'all'
+      if (newSelectedIds.length === 0) {
+        newSelectedIds = ['all'];
+      }
+
+      // If every category is selected, auto select 'all'
       const allIndividualIds = ageGroups
         .map(g => g.id)
         .filter(id => id !== 'all');
