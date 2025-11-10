@@ -1,9 +1,14 @@
+import { useState, useEffect } from "react";
 
 function AgeFilter({ ageRange, onApply }) {
-  const handleChange = (key, value) => {
-    const updated = { ...ageRange, [key]: Number(value) };
-    onApply(updated);
-  };
+  const [localAgeRange, setLocalAgeRange] = useState({
+    min: ageRange.min,
+    max: ageRange.max
+  });
+
+  useEffect(() => {
+    setLocalAgeRange(ageRange)
+  }, [ageRange]);
 
   return (
     <div className="form-row">
@@ -16,8 +21,8 @@ function AgeFilter({ ageRange, onApply }) {
             id="min-age"
             className="form-control"
             placeholder="Min age"
-            value={ageRange.min}
-            onChange={(e) => handleChange('min', e.target.value)}
+            value={localAgeRange.min}
+            onChange={(e) => setLocalAgeRange({...localAgeRange, min: Number(e.target.value)})}
           />
 
           <label
@@ -32,8 +37,8 @@ function AgeFilter({ ageRange, onApply }) {
             id="max-age"
             className="form-control"
             placeholder="Max age"
-            value={ageRange.max}
-            onChange={(e) => handleChange('max', e.target.value)}
+            value={localAgeRange.max}
+            onChange={(e) => setLocalAgeRange({...localAgeRange, max: Number(e.target.value)})}
           />
 
           <label
@@ -46,8 +51,8 @@ function AgeFilter({ ageRange, onApply }) {
       <button
         type="button"
         className="btn-primary mx-auto"
-        onClick={() => onApply(ageRange)}
-        disabled={ageRange.min > ageRange.max}
+        onClick={() => onApply(localAgeRange)}
+        disabled={localAgeRange.min > localAgeRange.max}
       >Apply</button>
     </div>
   );
