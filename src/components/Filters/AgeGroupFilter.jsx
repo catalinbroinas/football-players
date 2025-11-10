@@ -11,11 +11,19 @@ function AgeGroupFilter({ onChecked }) {
   const [selectedId, setSelectedId] = useState('');
 
   const handleChange = (e) => {
-    const id = e.target.value;
-    setSelectedId(id);
+    const { value, checked } = e.target;
 
-    const group = ageGroups.find(ageGroup => ageGroup.id === id);
-    onChecked({ min: group.min, max: group.max });
+    if (checked) {
+      setSelectedId(value);
+      const group = ageGroups.find(ageGroup => ageGroup.id === value);
+      onChecked({ min: group.min, max: group.max });
+    } else {
+      setSelectedId('');
+      onChecked({
+        min: ageGroups[0].min,
+        max: ageGroups[ageGroups.length - 1].max
+       });
+    }
   };
 
   return (
