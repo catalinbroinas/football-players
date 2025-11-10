@@ -7,10 +7,22 @@ import { getAge } from "../utils/dateUtils";
 function MainContent() {
   const[selectedTeam, setSelectedTeam] = useState('');
   const [selectedPositions, setSelectedPositions] = useState(['all']);
+
+  const ages = players
+    .map(player => getAge(player.dateOfBirth))
+    .filter(age => !isNaN(age));
+  
+  const youngestPlayer = Math.min(...ages);
+  const oldestPlayer = Math.max(...ages);
+
   const [ageRange, setAgeRange] = useState({
-    min: null,
-    max: null
+    min: youngestPlayer,
+    max: oldestPlayer
   });
+
+  const handleAgeRange = (newAgeRange) => {
+    setAgeRange(newAgeRange);
+  };
 
   const filteredPlayers = players.filter(player => {
     const teamMatch = selectedTeam 
@@ -36,8 +48,9 @@ function MainContent() {
         setSelectedTeam={setSelectedTeam}
         selectedPositions={selectedPositions}
         setSelectedPositions={setSelectedPositions}
-        onApply={setAgeRange}
-        onChecked={setAgeRange}
+        ageRange={ageRange}
+        onApply={handleAgeRange}
+        onChecked={handleAgeRange}
       />
       <Content players={filteredPlayers} />
     </div>

@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function AgeGroupFilter({ onChecked }) {
+function AgeGroupFilter({ ageRange, onChecked }) {
   const ageGroups = [
     { id: 'teen',    label: 'Teen (16–19)',    min: 16, max: 19 },
     { id: 'young',   label: 'Young (20–24)',   min: 20, max: 24 },
@@ -25,6 +25,13 @@ function AgeGroupFilter({ onChecked }) {
        });
     }
   };
+
+  useEffect(() => {
+    const match = ageGroups.find(g =>
+      g.min === ageRange.min && g.max === ageRange.max
+    );
+    setSelectedId(match ? match.id : '');
+  }, [ageRange]);
 
   return (
     <div className="form-row">

@@ -1,10 +1,9 @@
-import { useState } from "react";
 
-function AgeFilter({ minAge, maxAge, onApply }) {
-  const [ageRange, setAgeRange] = useState({
-    min: minAge,
-    max: maxAge
-  });
+function AgeFilter({ ageRange, onApply }) {
+  const handleChange = (key, value) => {
+    const updated = { ...ageRange, [key]: Number(value) };
+    onApply(updated);
+  };
 
   return (
     <div className="form-row">
@@ -18,7 +17,7 @@ function AgeFilter({ minAge, maxAge, onApply }) {
             className="form-control"
             placeholder="Min age"
             value={ageRange.min}
-            onChange={(e) => setAgeRange({...ageRange, min: Number(e.target.value)})}
+            onChange={(e) => handleChange('min', e.target.value)}
           />
 
           <label
@@ -34,7 +33,7 @@ function AgeFilter({ minAge, maxAge, onApply }) {
             className="form-control"
             placeholder="Max age"
             value={ageRange.max}
-            onChange={(e) => setAgeRange({...ageRange, max: Number(e.target.value)})}
+            onChange={(e) => handleChange('max', e.target.value)}
           />
 
           <label

@@ -4,6 +4,7 @@ function Sidebar({
     setSelectedTeam, 
     selectedPositions, 
     setSelectedPositions,
+    ageRange,
     onApply,
     onChecked
   }) {
@@ -13,6 +14,7 @@ function Sidebar({
         setSelectedTeam={setSelectedTeam}
         selectedPositions={selectedPositions}
         setSelectedPositions={setSelectedPositions}
+        ageRange={ageRange}
         onApply={onApply}
         onChecked={onChecked}
       />

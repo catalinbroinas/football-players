@@ -3,23 +3,16 @@ import PositionFilter from "./PositionFilter";
 import AgeFilter from "./AgeFilter";
 import AgeGroupFilter from "./AgeGroupFilter";
 import players from "../../data/players";
-import { getAge } from "../../utils/dateUtils";
 
 function FilterForm({ 
     setSelectedTeam, 
     selectedPositions, 
     setSelectedPositions,
+    ageRange,
     onApply,
     onChecked
   }) {
   const teams = [...new Set(players.map(player => player.team))].sort();
-
-  const ages = players
-    .map(player => getAge(player.dateOfBirth))
-    .filter(age => !isNaN(age));
-  
-  const youngestPlayer = Math.min(...ages);
-  const oldestPlayer = Math.max(...ages);
 
   return (
     <form className="form-container">
@@ -28,10 +21,12 @@ function FilterForm({
         selectedPositions= {selectedPositions}
         setSelectedPositions={setSelectedPositions}
       />
-      <AgeGroupFilter onChecked={onChecked} />
+      <AgeGroupFilter
+        ageRange={ageRange}
+        onChecked={onChecked} 
+      />
       <AgeFilter
-        minAge={youngestPlayer}
-        maxAge={oldestPlayer}
+        ageRange={ageRange}
         onApply={onApply}
       />
     </form>
