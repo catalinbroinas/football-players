@@ -29,10 +29,11 @@
   }
 }
 
-.main-content {
+.main-layout {
   display: grid;
   grid-template-columns: 250px 1fr;
   gap: $spacing-xl;
+  align-items: start;
 
   @include media-breakpoint-down($bp-xl) {
     grid-template-columns: 200px 1fr;
@@ -43,7 +44,22 @@
     grid-template-columns: 1fr;
   }
 
-   @include media-breakpoint-down($bp-sm) {
+  @include media-breakpoint-down($bp-sm) {
+    row-gap: $spacing-lg;
+  }
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  row-gap: $spacing-xl;
+
+  @include media-breakpoint-down($bp-xl) {
+    gap: $spacing-lg2;
+  }
+
+  @include media-breakpoint-down($bp-sm) {
     row-gap: $spacing-lg;
   }
 }

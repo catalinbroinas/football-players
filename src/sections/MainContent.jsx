@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Sidebar from "./Sidebar";
+import Toolbar from "./Toolbar";
 import Content from "./Content";
 import players from "../data/players";
 import { getAge } from "../utils/dateUtils";
@@ -43,7 +44,7 @@ function MainContent() {
   });
 
   return (
-    <div className="main-content">
+    <div className="main-layout">
       <Sidebar
         setSelectedTeam={setSelectedTeam}
         selectedPositions={selectedPositions}
@@ -52,7 +53,10 @@ function MainContent() {
         onApply={handleAgeRange}
         onChecked={handleAgeRange}
       />
-      <Content players={filteredPlayers} />
+      <div className="main-content">
+        <Toolbar />
+        <Content players={filteredPlayers} />
+      </div>
     </div>
   );
 }
