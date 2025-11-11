@@ -90,3 +90,18 @@
     gap: $spacing-md;
   }
 }
+
+.toolbar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: $spacing-lg2;
+
+  @include media-breakpoint-down($bp-xl) {
+    gap: $spacing-lg;
+  }
+
+  @include media-breakpoint-down($bp-md) {
+    gap: $spacing-md;
+  }
+}
