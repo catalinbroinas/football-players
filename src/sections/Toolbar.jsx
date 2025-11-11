@@ -1,7 +1,10 @@
+import Searchbar from "../components/Toolbar/Searchbar";
 
 function Toolbar() {
   return (
-    <section className="toolbar"></section>
+    <section className="toolbar">
+      <Searchbar />
+    </section>
   );
 }
 
