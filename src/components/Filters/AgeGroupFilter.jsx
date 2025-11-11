@@ -5,7 +5,7 @@ function AgeGroupFilter({ ageRange, onChecked }) {
     { id: 'teen',    label: 'Teen (16–19)',    min: 16, max: 19 },
     { id: 'young',   label: 'Young (20–24)',   min: 20, max: 24 },
     { id: 'prime',   label: 'Prime (25–30)',   min: 25, max: 30 },
-    { id: 'veteran', label: 'Veteran (31+)',   min: 31, max: Infinity }
+    { id: 'veteran', label: 'Veteran (31+)',   min: 31, max: null }
   ], []);
 
   const [selectedId, setSelectedId] = useState('');

@@ -37,7 +37,7 @@ function AgeFilter({ ageRange, onApply }) {
             id="max-age"
             className="form-control"
             placeholder="Max age"
-            value={localAgeRange.max}
+            value={localAgeRange.max || ""}
             onChange={(e) => setLocalAgeRange({...localAgeRange, max: Number(e.target.value)})}
           />
 
