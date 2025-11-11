@@ -1,5 +1,5 @@
 
-function Searchbar() {
+function SearchBar() {
   return (
     <form className="form-container">
       <div className="form-row">
@@ -21,4 +21,4 @@ function Searchbar() {
   );
 }
 
-export default Searchbar;
+export default SearchBar;

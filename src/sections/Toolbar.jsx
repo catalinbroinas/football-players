@@ -1,9 +1,9 @@
-import Searchbar from "../components/Toolbar/Searchbar";
+import SearchBar from "../components/Toolbar/SearchBar";
 
 function Toolbar() {
   return (
     <section className="toolbar">
-      <Searchbar />
+      <SearchBar />
     </section>
   );
 }
