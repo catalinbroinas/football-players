@@ -1,0 +1,30 @@
+// =================================
+//   Toolbar
+// =================================
+
+// Imports
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.sortPlayer {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  gap: $spacing-md;
+
+  &__select {
+    flex-grow: 1;
+  }
+
+  @include media-breakpoint-down($bp-xxl) {
+    width: 250px;
+  }
+
+  @include media-breakpoint-down($bp-lg) {
+    width: 200px;
+  }
+
+  @include media-breakpoint-down($bp-sm) {
+    width: 100%;
+  }
+}
