@@ -1,9 +1,13 @@
 
 function SortPlayers({ setSortBy }) {
   const sortOptions = [
-    { id: 'name', label: 'Name', filter: null },
-    { id: 'team', label: 'Team', filter: null },
-    { id: 'age', label: 'Age', filter: null }
+    { id: 'default', label: 'Default order' },
+    { id: 'name', label: 'Name (A–Z)' },
+    { id: 'name-revert', label: 'Name (Z–A)' },
+    { id: 'team', label: 'Team (A–Z)' },
+    { id: 'team-revert', label: 'Team (Z–A)' },
+    { id: 'age',  label: 'Age (Youngest first)' },
+    { id: 'age-revert',  label: 'Age (Oldest first)' }
   ];
 
   return (

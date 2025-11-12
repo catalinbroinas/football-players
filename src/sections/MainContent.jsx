@@ -21,7 +21,7 @@ function MainContent() {
     max: oldestPlayer
   });
 
-  const [sortBy, setSortBy] = useState('name');
+  const [sortBy, setSortBy] = useState('default');
 
   const handleAgeRange = (newAgeRange) => {
     setAgeRange(newAgeRange);
@@ -45,14 +45,22 @@ function MainContent() {
     return teamMatch && positionMatch && ageMatch;
   });
 
-  const sortedPlayers = [...filteredPlayers].sort((a, b) => {
+  const sortedPlayers = sortBy === 'default'
+    ? filteredPlayers
+    : [...filteredPlayers].sort((a, b) => {
     switch(sortBy) {
       case 'name':
         return a.name.localeCompare(b.name);
+      case 'name-revert':
+        return b.name.localeCompare(a.name);
       case 'team':
         return a.team.localeCompare(b.team);
+      case 'team-revert':
+        return b.team.localeCompare(a.team);
       case 'age':
         return getAge(a.dateOfBirth) - getAge(b.dateOfBirth);
+      case 'age-revert':
+        return getAge(b.dateOfBirth) - getAge(a.dateOfBirth);
       default:
         return 0;
     };
