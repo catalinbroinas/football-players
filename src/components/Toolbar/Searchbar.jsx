@@ -1,5 +1,5 @@
 
-function SearchBar() {
+function SearchBar({ filterText, onFilterTextChange }) {
   return (
     <form className="form-container">
       <div className="form-row">
@@ -9,6 +9,8 @@ function SearchBar() {
             id="searchbar"
             className="form-control"
             placeholder="Search player"
+            value={filterText}
+            onChange={(e) => onFilterTextChange(e.target.value)}
           />
 
           <label

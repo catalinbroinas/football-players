@@ -1,10 +1,17 @@
 import SearchBar from "../components/Toolbar/SearchBar";
 import SortPlayers from "../components/Toolbar/SortPlayers";
 
-function Toolbar({ setSortBy }) {
+function Toolbar({ 
+  setSortBy,
+  filterText,
+  onFilterTextChange
+}) {
   return (
     <section className="toolbar">
-      <SearchBar />
+      <SearchBar
+        filterText={filterText}
+        onFilterTextChange={onFilterTextChange}
+      />
       <SortPlayers setSortBy={setSortBy} />
     </section>
   );

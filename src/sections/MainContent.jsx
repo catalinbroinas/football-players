@@ -22,6 +22,7 @@ function MainContent() {
   });
 
   const [sortBy, setSortBy] = useState('default');
+  const [filterText, setFilterText] = useState('');
 
   const handleAgeRange = (newAgeRange) => {
     setAgeRange(newAgeRange);
@@ -66,6 +67,10 @@ function MainContent() {
     };
   });
 
+  const searchedPlayers = sortedPlayers.filter(player => (
+    player.name.toLowerCase().includes(filterText.toLowerCase().trim())
+  ));
+
   return (
     <div className="main-layout">
       <Sidebar
@@ -77,8 +82,12 @@ function MainContent() {
         onChecked={handleAgeRange}
       />
       <div className="main-content">
-        <Toolbar setSortBy={setSortBy} />
-        <Content players={sortedPlayers} />
+        <Toolbar
+          setSortBy={setSortBy}
+          filterText={filterText}
+          onFilterTextChange={setFilterText}
+        />
+        <Content players={searchedPlayers} />
       </div>
     </div>
   );
