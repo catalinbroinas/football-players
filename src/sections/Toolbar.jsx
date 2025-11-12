@@ -1,11 +1,11 @@
 import SearchBar from "../components/Toolbar/SearchBar";
 import SortPlayers from "../components/Toolbar/SortPlayers";
 
-function Toolbar() {
+function Toolbar({ setSortBy }) {
   return (
     <section className="toolbar">
       <SearchBar />
-      <SortPlayers  />
+      <SortPlayers setSortBy={setSortBy} />
     </section>
   );
 }

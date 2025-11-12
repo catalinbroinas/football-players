@@ -1,5 +1,5 @@
 
-function SortPlayers() {
+function SortPlayers({ setSortBy }) {
   const sortOptions = [
     { id: 'name', label: 'Name', filter: null },
     { id: 'team', label: 'Team', filter: null },
@@ -17,6 +17,7 @@ function SortPlayers() {
         id="select-sort"
         name="sort"
         className="form-outline form-select sortPlayer__select"
+        onChange={(e) => setSortBy(e.target.value)}
       >
         {sortOptions.map(option => (
           <option key={option.id} value={option.id}>{option.label}</option>

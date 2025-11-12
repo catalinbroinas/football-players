@@ -21,6 +21,8 @@ function MainContent() {
     max: oldestPlayer
   });
 
+  const [sortBy, setSortBy] = useState('name');
+
   const handleAgeRange = (newAgeRange) => {
     setAgeRange(newAgeRange);
   };
@@ -43,6 +45,19 @@ function MainContent() {
     return teamMatch && positionMatch && ageMatch;
   });
 
+  const sortedPlayers = [...filteredPlayers].sort((a, b) => {
+    switch(sortBy) {
+      case 'name':
+        return a.name.localeCompare(b.name);
+      case 'team':
+        return a.team.localeCompare(b.team);
+      case 'age':
+        return getAge(a.dateOfBirth) - getAge(b.dateOfBirth);
+      default:
+        return 0;
+    };
+  });
+
   return (
     <div className="main-layout">
       <Sidebar
@@ -54,8 +69,8 @@ function MainContent() {
         onChecked={handleAgeRange}
       />
       <div className="main-content">
-        <Toolbar />
-        <Content players={filteredPlayers} />
+        <Toolbar setSortBy={setSortBy} />
+        <Content players={sortedPlayers} />
       </div>
     </div>
   );
