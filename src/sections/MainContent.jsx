@@ -4,6 +4,7 @@ import Toolbar from "./Toolbar";
 import Content from "./Content";
 import players from "../data/players";
 import { getAge } from "../utils/dateUtils";
+import { filterPlayers, searchPlayers, sortPlayers } from "../utils/playerUtils";
 
 function MainContent() {
   // Derived data
@@ -23,51 +24,14 @@ function MainContent() {
   const [sortBy, setSortBy] = useState('default');
   const [filterText, setFilterText] = useState('');
 
-  // Filtering
-  const filteredPlayers = players.filter(player => {
-    const teamMatch = selectedTeam 
-      ? player.team === selectedTeam
-      : true;
-
-    const positionMatch = 
-      selectedPositions.includes('all') ||
-      selectedPositions.includes(player.position.toLowerCase());
-
-    const playerAge = getAge(player.dateOfBirth);
-
-    const ageMatch =
-      (ageRange.min === null || playerAge >= ageRange.min) &&
-      (ageRange.max === null || playerAge <= ageRange.max);
-
-    return teamMatch && positionMatch && ageMatch;
+  // Processing
+  const filteredPlayers = filterPlayers(players, {
+    selectedTeam,
+    selectedPositions,
+    ageRange
   });
-
-  // Sorting
-  const sortedPlayers = sortBy === 'default'
-    ? filteredPlayers
-    : [...filteredPlayers].sort((a, b) => {
-    switch(sortBy) {
-      case 'name':
-        return a.name.localeCompare(b.name);
-      case 'name-revert':
-        return b.name.localeCompare(a.name);
-      case 'team':
-        return a.team.localeCompare(b.team);
-      case 'team-revert':
-        return b.team.localeCompare(a.team);
-      case 'age':
-        return getAge(a.dateOfBirth) - getAge(b.dateOfBirth);
-      case 'age-revert':
-        return getAge(b.dateOfBirth) - getAge(a.dateOfBirth);
-      default:
-        return 0;
-    };
-  });
-
-  // Searching
-  const searchedPlayers = sortedPlayers.filter(player => (
-    player.name.toLowerCase().includes(filterText.toLowerCase().trim())
-  ));
+  const sortedPlayers = sortPlayers(filteredPlayers, sortBy);
+  const searchedPlayers = searchPlayers(sortedPlayers, filterText);
 
   return (
     <div className="main-layout">
