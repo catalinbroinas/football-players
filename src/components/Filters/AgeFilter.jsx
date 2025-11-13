@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 function AgeFilter({ ageRange, onApply }) {
   const [localAgeRange, setLocalAgeRange] = useState({
@@ -52,9 +52,12 @@ function AgeFilter({ ageRange, onApply }) {
         <button
           type="button"
           className="btn-primary mx-auto"
+          aria-label="Apply"
           onClick={() => onApply(localAgeRange)}
           disabled={localAgeRange.min > localAgeRange.max}
-        >Apply</button>
+        >
+          <FontAwesomeIcon icon={faAngleRight} />
+        </button>
       </div>
     </fieldset>
   );
