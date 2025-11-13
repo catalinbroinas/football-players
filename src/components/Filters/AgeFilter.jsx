@@ -22,7 +22,7 @@ function AgeFilter({ ageRange, onApply }) {
             type="number"
             id="min-age"
             className="form-control"
-            placeholder="Min age"
+            placeholder="Min"
             value={localAgeRange.min}
             onChange={(e) => setLocalAgeRange({...localAgeRange, min: Number(e.target.value)})}
           />
@@ -30,7 +30,7 @@ function AgeFilter({ ageRange, onApply }) {
           <label
             htmlFor="min-age"
             className="form-label"
-          >Min age</label>
+          >Min</label>
         </div>
 
         <div className="form-outline">
@@ -38,7 +38,7 @@ function AgeFilter({ ageRange, onApply }) {
             type="number"
             id="max-age"
             className="form-control"
-            placeholder="Max age"
+            placeholder="Max"
             value={localAgeRange.max || ""}
             onChange={(e) => setLocalAgeRange({...localAgeRange, max: Number(e.target.value)})}
           />
@@ -46,7 +46,7 @@ function AgeFilter({ ageRange, onApply }) {
           <label
             htmlFor="max-age"
             className="form-label"
-          >Max age</label>
+          >Max</label>
         </div>
 
         <button
