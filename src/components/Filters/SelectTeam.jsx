@@ -6,9 +6,9 @@ function SelectTeam({ teams, setSelectedTeam }) {
 
   return (
     <div className="form-column filter-form__select-team">
-      <label 
+      <label
         htmlFor="team-select" 
-        className="text fw-bold mb-0"
+        className="form-legend mb-0"
       >
         Select team
       </label>
