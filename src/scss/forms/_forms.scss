@@ -13,13 +13,13 @@
 
 .form-container {
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
   gap: $spacing-lg;
 }
 
 .form-row {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   gap: $spacing-md;
 
   @include media-breakpoint-down(sn) {
