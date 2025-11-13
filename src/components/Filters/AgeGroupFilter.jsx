@@ -34,12 +34,12 @@ function AgeGroupFilter({ ageRange, onChecked }) {
   }, [ageRange, ageGroups]);
 
   return (
-    <div className="form-row">
-      <p className="text fw-bold w-100 mb-0">
+    <fieldset className="form-fieldset">
+      <legend className="form-legend">
         Filter by age group
-      </p>
+      </legend>
 
-      <div className="form-column">
+      <div className="form-column filter-form__check-ageGroup">
         {ageGroups.map(ageGroup => (
           <div key={ageGroup.id} className="checkbox-wrapper">
             <input
@@ -59,7 +59,7 @@ function AgeGroupFilter({ ageRange, onChecked }) {
           </div>
         ))}
       </div>
-    </div>
+    </fieldset>
   );
 }
 
