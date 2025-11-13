@@ -5,10 +5,10 @@ function SelectTeam({ teams, setSelectedTeam }) {
   };
 
   return (
-    <div className="form-row">
+    <div className="form-column filter-form__select-team">
       <label 
         htmlFor="team-select" 
-        className="text fw-bold w-100 mb-0"
+        className="text fw-bold mb-0"
       >
         Select team
       </label>
@@ -16,7 +16,7 @@ function SelectTeam({ teams, setSelectedTeam }) {
       <select 
         id="team-select" 
         name="team" 
-        className="form-outline form-select" 
+        className="form-select filter-form__select"
         onChange={handleChange}
       >
         <option value="">All teams</option>

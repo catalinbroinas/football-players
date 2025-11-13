@@ -1,0 +1,24 @@
+// =================================
+//   FILTER FORM
+// =================================
+
+// Imports
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.filter-form {
+  &__select-team {
+    align-items: stretch;
+
+    @include media-breakpoint-down($bp-lg) {
+      align-items: flex-start;
+    }
+  }
+
+  &__select {
+    @include media-breakpoint-down($bp-lg) {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+}

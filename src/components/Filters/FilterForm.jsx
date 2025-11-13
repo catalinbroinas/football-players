@@ -15,7 +15,7 @@ function FilterForm({
   const teams = [...new Set(players.map(player => player.team))].sort();
 
   return (
-    <form className="form-container">
+    <form className="form-container filter-form">
       <SelectTeam teams={teams} setSelectedTeam={setSelectedTeam} />
       <PositionFilter 
         selectedPositions= {selectedPositions}
