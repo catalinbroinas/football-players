@@ -75,11 +75,11 @@
   $value: map.get($map, $size);
 
   @if $breakpoint == null {
-    #{$property}: $value;
+    #{$property}: $value !important;
   } @else {
     $min-width: map.get($breakpoints, $breakpoint);
     @media (min-width: $min-width) {
-      #{$property}: $value;
+      #{$property}: $value !important;
     }
   }
 }

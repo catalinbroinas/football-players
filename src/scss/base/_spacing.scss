@@ -35,10 +35,10 @@ $spacing-utilities: (
 }
 
 // Margin auto
-.m-auto   { margin: auto; }
-.mx-auto  { margin: 0 auto; }
-.my-auto  { margin: auto 0; }
-.ms-auto  { margin-left: auto; }
-.me-auto  {  margin-right: auto; }
-.mb-auto  { margin-bottom: auto; }
-.mt-auto  { margin-top: auto; }
+.m-auto   { margin: auto !important; }
+.mx-auto  { margin: 0 auto !important; }
+.my-auto  { margin: auto 0 !important; }
+.ms-auto  { margin-left: auto !important; }
+.me-auto  {  margin-right: auto !important; }
+.mb-auto  { margin-bottom: auto !important; }
+.mt-auto  { margin-top: auto !important; }
