@@ -21,4 +21,11 @@
       max-width: 300px;
     }
   }
+  
+  &__check-positions,
+  &__check-ageGroup {
+    @include media-breakpoint-between($bp-sm, $bp-lg) {
+      flex-flow: row wrap;
+    }
+  }
 }
