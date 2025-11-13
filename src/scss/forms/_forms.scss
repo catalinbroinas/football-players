@@ -39,6 +39,23 @@
   position: relative;
 }
 
+.form-fieldset {
+  appearance: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-inline-size: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-md;
+}
+
+.form-legend {
+  @include custom-text($font-title, 600, $fs-base);
+  margin-bottom: $spacing-md;
+}
+
 // =================================
 //   INPUT FIELDS
 // =================================
