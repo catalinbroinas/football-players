@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
-import PlayerList from "../components/PlayerList";
+import PlayerList from "../../components/Player/PlayerList";
 
 function Content({ players }) {
   return (

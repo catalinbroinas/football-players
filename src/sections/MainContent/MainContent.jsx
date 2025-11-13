@@ -2,9 +2,9 @@ import { useState } from "react";
 import Sidebar from "./Sidebar";
 import Toolbar from "./Toolbar";
 import Content from "./Content";
-import players from "../data/players";
-import { getAge } from "../utils/dateUtils";
-import { filterPlayers, searchPlayers, sortPlayers } from "../utils/playerUtils";
+import players from "../../data/players";
+import { getAge } from "../../utils/dateUtils";
+import { filterPlayers, searchPlayers, sortPlayers } from "../../utils/playerUtils";
 
 function MainContent() {
   // Derived data

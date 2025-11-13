@@ -1,6 +1,6 @@
-import { getAge } from "../utils/dateUtils";
+import { getAge } from "../../utils/dateUtils";
 
-function CardPlayer({ image, name, dateOfBirth, position, team }) {
+function PlayerCard({ image, name, dateOfBirth, position, team }) {
   const age = getAge(dateOfBirth);
 
   return (
@@ -24,4 +24,4 @@ function CardPlayer({ image, name, dateOfBirth, position, team }) {
   );
 }
 
-export default CardPlayer;
+export default PlayerCard;

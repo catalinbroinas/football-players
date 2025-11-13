@@ -1,5 +1,5 @@
-import SearchBar from "../components/Toolbar/SearchBar";
-import SortPlayers from "../components/Toolbar/SortPlayers";
+import SearchBar from "../../components/Toolbar/SearchBar";
+import SortPlayers from "../../components/Toolbar/SortPlayers";
 
 function Toolbar({ 
   setSortBy,

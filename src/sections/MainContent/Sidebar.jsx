@@ -1,4 +1,4 @@
-import FilterForm from "../components/Filters/FilterForm";
+import FilterForm from "../../components/Filters/FilterForm";
 
 function Sidebar({ 
     setSelectedTeam, 

@@ -1,10 +1,10 @@
-import CardPlayer from "./CardPlayer";
+import PlayerCard from ".//PlayerCard";
 
 function PlayerList({ players }) {
   return (
     <div className="player-list">
       {players.map(player => (
-        <CardPlayer key={player.id} {...player} />
+        <PlayerCard key={player.id} {...player} />
       ))}
     </div>
   );
