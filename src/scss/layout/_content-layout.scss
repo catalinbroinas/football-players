@@ -43,7 +43,6 @@
 
   @include media-breakpoint-down($bp-sm) {
     grid-template-columns: 1fr;
-    padding-inline: $spacing-md;
     gap: $spacing-md;
   }
 }

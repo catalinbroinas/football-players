@@ -46,5 +46,6 @@
 
   @include media-breakpoint-down($bp-sm) {
     row-gap: $spacing-lg;
+    padding-inline: $spacing-md;
   }
 }
