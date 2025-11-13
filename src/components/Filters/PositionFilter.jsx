@@ -27,10 +27,10 @@ function PositionFilter({ selectedPositions, setSelectedPositions }) {
   };
 
   return (
-    <div className="form-row">
-      <p className="text fw-bold w-100 mb-0">Choose position</p>
+    <fieldset className="form-fieldset">
+      <legend className="form-legend">Choose position</legend>
 
-      <div className="form-column">
+      <div className="form-column filter-form__check-positions">
         <div className="checkbox-wrapper">
           <input
             type="checkbox"
@@ -66,7 +66,7 @@ function PositionFilter({ selectedPositions, setSelectedPositions }) {
           </div>
         ))}
       </div>
-    </div>
+    </fieldset>
   );
 }
 
