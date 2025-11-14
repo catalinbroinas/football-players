@@ -3,11 +3,17 @@
 // =================================
 
 // Imports
+@use 'sass:color';
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
 
 .intro {
-  background-color: $bg-accent;
+  background: linear-gradient(
+    180deg,
+    color.scale($bg-accent, $lightness: +1%) 0%,
+    color.scale($bg-accent, $lightness: -1%) 100%
+  );
+
   padding-block: 5rem;
 
   @include media-breakpoint-down($bp-md) {
@@ -17,14 +23,30 @@
   &__title {
     @include page-title();
     text-transform: uppercase;
+    margin-bottom: 0.75rem;
 
     @include media-breakpoint-down($bp-md) {
       font-size: $fs-xxl;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__season-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    @include media-breakpoint-down($bp-md) {
+      display: block;
+      margin-bottom: 0.75rem;
     }
   }
 
   &__subtitle {
     @include title($fs-xxl, $text-accent);
+    margin: 0;
 
     @include media-breakpoint-down($bp-md) {
       font-size: $fs-lg;
@@ -33,6 +55,7 @@
 
   &__text {
     @include text($fs-lg);
+    margin: 0;
 
     @include media-breakpoint-down($bp-md) {
       font-size: $fs-md;
@@ -41,9 +64,10 @@
 
   &__hr {
     height: 4px;
-    width: 5rem;
-    background-color: $text-accent;
+    width: 3.5rem;
     border: none;
+    border-radius: 2px;
+    background-color: $text-accent;
 
     @include media-breakpoint-down($bp-md) {
       display: none;
