@@ -21,7 +21,7 @@ function AgeFilter({ ageRange, onApply }) {
           <input
             type="number"
             id="min-age"
-            className="form-control"
+            className="form-control filter-form__input"
             placeholder="Min"
             value={localAgeRange.min || ""}
             onChange={(e) => setLocalAgeRange({...localAgeRange, min: Number(e.target.value)})}
@@ -37,7 +37,7 @@ function AgeFilter({ ageRange, onApply }) {
           <input
             type="number"
             id="max-age"
-            className="form-control"
+            className="form-control filter-form__input"
             placeholder="Max"
             value={localAgeRange.max || ""}
             onChange={(e) => setLocalAgeRange({...localAgeRange, max: Number(e.target.value)})}
@@ -51,7 +51,7 @@ function AgeFilter({ ageRange, onApply }) {
 
         <button
           type="button"
-          className="btn-primary mx-auto"
+          className="btn-primary filter-form__btn"
           aria-label="Apply"
           onClick={() => onApply(localAgeRange)}
           disabled={localAgeRange.min > localAgeRange.max}
