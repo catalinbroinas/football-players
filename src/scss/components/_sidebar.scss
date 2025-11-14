@@ -8,8 +8,21 @@
 @use '../base/mixins' as *;
 
 .sidebar {
+  width: 300px;
   background-color: $bg-surface;
   padding: $spacing-lg;
   border-radius: $rounded-sm;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+  @include media-breakpoint-down($bp-xxl) {
+    width: 260px;
+  }
+
+  @include media-breakpoint-down($bp-xl) {
+    width: 220px;
+  }
+
+  @include media-breakpoint-down($bp-lg) {
+    width: 100%;
+  }
 }
