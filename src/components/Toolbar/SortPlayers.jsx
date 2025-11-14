@@ -14,7 +14,7 @@ function SortPlayers({ setSortBy }) {
     <div className="sortPlayer">
       <label
         htmlFor="select-sort"
-        className="text fw-bold mb-0"
+        className="form-legend mb-0"
       >Sort by</label>
 
       <select
