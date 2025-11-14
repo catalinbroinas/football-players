@@ -23,7 +23,7 @@ function AgeFilter({ ageRange, onApply }) {
             id="min-age"
             className="form-control"
             placeholder="Min"
-            value={localAgeRange.min}
+            value={localAgeRange.min || ""}
             onChange={(e) => setLocalAgeRange({...localAgeRange, min: Number(e.target.value)})}
           />
 
