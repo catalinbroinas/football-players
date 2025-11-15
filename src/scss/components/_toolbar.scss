@@ -12,6 +12,10 @@
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: $spacing-lg2;
+  background-color: $bg-surface;
+  padding: $spacing-md $spacing-lg;
+  border-radius: $rounded-sm;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
 
   @include media-breakpoint-down($bp-xl) {
     gap: $spacing-lg;
