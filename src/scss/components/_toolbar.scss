@@ -24,6 +24,7 @@
   @include media-breakpoint-down($bp-md) {
     grid-template-columns: 1fr;
     gap: $spacing-md;
+    padding: $spacing-lg;
   }
 }
 
