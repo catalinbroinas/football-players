@@ -49,6 +49,30 @@ const players = [
     dateOfBirth: '1992-06-15',
     image: images.mohamedSalah
   },
+  {
+    id: crypto.randomUUID(),
+    name: 'Emiliano Martinez',
+    team: 'Aston Villa',
+    position: 'Goalkeeper',
+    dateOfBirth: '1992-09-02',
+    image: images.emilianoMartinez
+  },
+  {
+    id: crypto.randomUUID(),
+    name: 'Kieran Trippier',
+    team: 'Newcastle Utd',
+    position: 'Defender',
+    dateOfBirth: '1990-09-19',
+    image: images.kieranTrippier
+  },
+  {
+    id: crypto.randomUUID(),
+    name: 'Ethan Nwaneri',
+    team: 'Arsenal',
+    position: 'Midfielder',
+    dateOfBirth: '2007-03-21',
+    image: images.ethanNwaneri
+  },
 ];
 
 export default players;
