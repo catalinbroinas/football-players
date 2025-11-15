@@ -54,7 +54,11 @@ function AgeFilter({ ageRange, onApply }) {
           className="btn-primary filter-form__btn"
           aria-label="Apply"
           onClick={() => onApply(localAgeRange)}
-          disabled={localAgeRange.min > localAgeRange.max}
+          disabled={
+            (!localAgeRange.min) ||
+            (!localAgeRange.max) ||
+            (localAgeRange.min > localAgeRange.max)
+          }
         >
           <FontAwesomeIcon icon={faAngleRight} />
         </button>
