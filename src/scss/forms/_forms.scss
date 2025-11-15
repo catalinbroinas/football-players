@@ -56,6 +56,19 @@
   margin-bottom: $spacing-md;
 }
 
+.form-icon {
+  display: flex;
+  align-self: center;
+  font-size: $fs-lg;
+  color: $form-border;
+  transition: color 0.3s ease-in, transform 0.3s ease-in;
+}
+
+.form-row:focus-within .form-icon {
+  color: $form-border-focus;
+  transform: scale(1.2);
+}
+
 // =================================
 //   INPUT FIELDS
 // =================================

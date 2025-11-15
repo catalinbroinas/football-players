@@ -1,8 +1,14 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function SearchBar({ filterText, onFilterTextChange }) {
   return (
     <form className="form-container">
       <div className="form-row">
+        <div className="form-icon">
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </div>
+
         <div className="form-outline">
           <input
             type="text"
