@@ -1,4 +1,4 @@
-import SearchBar from "../../components/Toolbar/SearchBar";
+import SearchBar from "../../components/Toolbar/SearchBar_temp";
 import SortPlayers from "../../components/Toolbar/SortPlayers";
 
 function Toolbar({ 
