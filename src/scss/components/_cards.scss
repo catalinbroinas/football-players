@@ -53,12 +53,13 @@
   }
 
   .card-header {
+    padding: 0.5rem 1.25rem;
     text-align: center;
     background-color: $bg-page;
   }
 
   .card-body {
-    padding: $spacing-sm $spacing-lg;
+    padding: 0.5rem 1.25rem;
   }
 
   .card-title {
