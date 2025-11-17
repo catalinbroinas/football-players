@@ -10,11 +10,11 @@
 .intro {
   background: linear-gradient(
     180deg,
-    color.scale($bg-accent, $lightness: +1%) 0%,
+    color.scale($bg-accent, $lightness: 3%) 0%,
     color.scale($bg-accent, $lightness: -1%) 100%
   );
-
-  padding-block: 5rem;
+  padding-block: 4rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 
   @include media-breakpoint-down($bp-md) {
     padding-block: 3rem;
